@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img"
+        app:layout_constraintRight_toLeftOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        ></ImageView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:gravity="center_horizontal"
+        android:shadowDx="0"
+        android:shadowDy="4"
+        android:shadowRadius="4"
+        android:text="Smart Garden"
+        android:textColor="@color/green_text"
+        android:textSize="@dimen/_36ssp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/logo"
+        tools:ignore="HardcodedText" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="25dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+    </View>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtTxt_nameLayout"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        app:hintTextColor="@color/sky"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:drawableStart="@drawable/icon_user"
+            android:hint="Name"
+            android:inputType="text"
+            android:padding="@dimen/_5sdp"
+            tools:ignore="HardcodedText" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtText_phoneLayout"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="50dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        app:hintTextColor="@color/sky"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.423"
+
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxt_nameLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/icon_phone"
+            android:hint=" Phone"
+            android:textSize="@dimen/_12ssp"
+            android:inputType="textPassword"
+            android:padding="@dimen/_5sdp"
+            tools:ignore="HardcodedText">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtTxt_emailLayout"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="50dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        app:hintTextColor="@color/sky"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.423"
+
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_phoneLayout"      >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:drawableStart="@drawable/ic_mail"
+            android:hint="Email"
+            android:inputType="text"
+            android:padding="@dimen/_5sdp"
+            tools:ignore="HardcodedText" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtText_passwordLayout"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="50dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        app:hintTextColor="@color/sky"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxt_emailLayout"
+        app:passwordToggleDrawable="@drawable/show_password_selector"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_lock"
+            android:hint="Password"
+            android:textSize="@dimen/_12ssp"
+            android:inputType="textPassword"
+            android:padding="@dimen/_5sdp"
+            tools:ignore="HardcodedText">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtText_repeat_passwordLayout"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="50dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        app:hintTextColor="@color/sky"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_passwordLayout"
+        app:passwordToggleDrawable="@drawable/show_password_selector"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/repeat_password"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_lock"
+            android:hint="Repeat password"
+            android:textSize="@dimen/_12ssp"
+            android:inputType="textPassword"
+            android:padding="@dimen/_5sdp"
+            tools:ignore="HardcodedText">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signin"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="48dp"
+        android:background="@drawable/blue_round_button"
+        android:backgroundTint="@color/green"
+        android:text="ĐĂNG ký"
+        android:textColor="@color/white"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_repeat_passwordLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
