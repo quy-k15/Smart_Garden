@@ -14,7 +14,7 @@
        app:layout_constraintLeft_toLeftOf="parent"
        android:text="Lịch trình của tôi"
        android:layout_marginTop="20dp"
-       android:layout_marginLeft="50dp"
+       android:layout_marginLeft="80dp"
        android:textColor="@color/green_text"
        android:textSize="30dp"></TextView>
 
@@ -28,7 +28,17 @@
        android:background="@drawable/icon_user"
        app:layout_constraintLeft_toRightOf="@+id/tv_MySchedule"
        app:layout_constraintTop_toTopOf="parent"
-       android:layout_marginLeft="70dp" />
+       android:layout_marginLeft="50dp" />
+
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/btn_back"
+       android:layout_width="35dp"
+       android:layout_height="35dp"
+       android:layout_marginStart="16dp"
+       android:layout_marginTop="20dp"
+       android:background="@drawable/btn_back"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
 
 
    <ScrollView

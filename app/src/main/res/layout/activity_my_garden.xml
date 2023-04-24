@@ -14,7 +14,7 @@
        app:layout_constraintLeft_toLeftOf="parent"
        android:text="Vườn của tôi"
        android:layout_marginTop="20dp"
-       android:layout_marginLeft="50dp"
+       android:layout_marginLeft="80dp"
        android:textColor="@color/green_text"
        android:textSize="30dp"></TextView>
 
@@ -23,10 +23,19 @@
        android:id="@+id/btn_info_user"
        android:layout_width="48dp"
        android:layout_height="48dp"
-       android:layout_marginLeft="100dp"
+       android:layout_marginLeft="85dp"
        android:layout_marginTop="30dp"
        android:background="@drawable/icon_user"
        app:layout_constraintLeft_toRightOf="@+id/tv_MyGarden"
+       app:layout_constraintTop_toTopOf="parent" />
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/btn_back"
+       android:layout_width="35dp"
+       android:layout_height="35dp"
+       android:layout_marginStart="16dp"
+       android:layout_marginTop="20dp"
+       android:background="@drawable/btn_back"
+       app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
 
 

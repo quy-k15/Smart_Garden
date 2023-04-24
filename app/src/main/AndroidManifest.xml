@@ -33,6 +33,26 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".MyScheduleActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MyGardenActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ScheduleWaterActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".StartAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScheduleLightActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
