@@ -83,7 +83,7 @@
                 android:layout_marginLeft="60dp"
                 android:background="@drawable/yellow_circle_line"
                 android:backgroundTint="@color/white"
-                android:drawableLeft="@drawable/ic_green_Sun"
+                android:drawableLeft="@drawable/ic_green_sun"
                 android:gravity="center"
                 app:layout_constraintTop_toTopOf="parent"
 
@@ -136,7 +136,7 @@
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toLeftOf="parent"
                       android:layout_margin="20dp"
-                      android:src="@drawable/img_Cay1"
+                      android:src="@drawable/img_cay1"
                      ></ImageView>
 
                   <TextView
@@ -216,7 +216,7 @@
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toLeftOf="parent"
                       android:layout_margin="20dp"
-                      android:src="@drawable/img_Cay3"
+                      android:src="@drawable/img_cay3"
                       ></ImageView>
 
                   <TextView

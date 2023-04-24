@@ -67,8 +67,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Firebase lib
-    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+//    implementation platform('com.google.firebase:firebase-bom:31.1.1')
 
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
     //Firebase Authentication
     implementation 'com.google.firebase:firebase-auth:21.1.0'
     // Add the dependencies for the Dynamic Links and Analytics libraries
@@ -120,7 +123,7 @@ dependencies {
 
 
     //ImagePicker
-    implementation 'com.github.dhaval2404:imagepicker:2.1'
+//    implementation 'com.github.dhaval2404:imagepicker:2.1'
 
     //Image Slideshow
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'

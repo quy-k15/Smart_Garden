@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "602296418186",
+    "firebase_url": "https://smart-garden-iot-f58c4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smart-garden-iot-f58c4",
+    "storage_bucket": "smart-garden-iot-f58c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602296418186:android:1c1ce0744bb1facf5c5273",
+        "android_client_info": {
+          "package_name": "com.example.smart_garden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602296418186-00uprv9qf6hjiv5u0uanlo73g7feelep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3a-hE7wazzZFMikiS0TasWBsF1Pon53k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602296418186-00uprv9qf6hjiv5u0uanlo73g7feelep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602296418186:android:4b20915efc6f2cc15c5273",
+        "android_client_info": {
+          "package_name": "com.nhom17.smartgardeniot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602296418186-00uprv9qf6hjiv5u0uanlo73g7feelep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3a-hE7wazzZFMikiS0TasWBsF1Pon53k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602296418186-00uprv9qf6hjiv5u0uanlo73g7feelep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
