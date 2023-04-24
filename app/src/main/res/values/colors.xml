@@ -10,8 +10,14 @@
     <color name="sunflower">#FFBB00</color>
     <color name="gray">#838181</color>
     <color name="green">#5B8E55</color>
+    <color name="orange">#E7C2A0</color>
+    <color name="pink">#FFA8A8</color>
+
+
+
 
     <color name="green_text">#084701</color>
+    <color name="green_btn">#61824D</color>
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
@@ -20,7 +26,7 @@
     <color name="transparent">#00000000</color>
 
     <color name="green1">#29CF40</color>
-    <color name="blue1">#66a3ff</color>
+    <color name="blu">#A0CDE7</color>
     <color name="blue2">#0033cc</color>
     <color name="White">#fff</color>
     <color name="darkGrey">#a6a6a6 </color>

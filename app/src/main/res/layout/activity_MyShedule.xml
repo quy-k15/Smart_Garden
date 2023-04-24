@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/tv_MySchedule"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:text="Lịch trình của tôi"
+       android:layout_marginTop="20dp"
+       android:layout_marginLeft="50dp"
+       android:textColor="@color/green_text"
+       android:textSize="30dp"></TextView>
+
+
+
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/btn_info_user"
+       android:layout_width="35dp"
+       android:layout_height="35dp"
+       android:layout_marginTop="30dp"
+       android:background="@drawable/icon_user"
+       app:layout_constraintLeft_toRightOf="@+id/tv_MySchedule"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_marginLeft="70dp" />
+
+
+   <ScrollView
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:layout_marginTop="8dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/tv_MySchedule">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_LichTuoiNuoc"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="60dp"
+                android:background="@drawable/yellow_circle_line"
+                android:backgroundTint="@color/white"
+                android:drawableLeft="@drawable/ic_green_water"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_LichTuoiNuoc"
+                android:text="Lịch tưới"
+                android:textSize="18dp"
+                app:layout_constraintTop_toBottomOf="@id/btn_LichTuoiNuoc"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="45dp"
+               ></TextView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_LichThapDen"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="60dp"
+                android:background="@drawable/yellow_circle_line"
+                android:backgroundTint="@color/white"
+                android:drawableLeft="@drawable/ic_green_Sun"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:layout_constraintLeft_toRightOf="@+id/btn_LichTuoiNuoc"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_LichThapDen"
+                android:text="Lịch thắp đèn"
+                android:textSize="18dp"
+                app:layout_constraintTop_toBottomOf="@id/btn_LichTuoiNuoc"
+                app:layout_constraintLeft_toRightOf="@+id/tv_LichTuoiNuoc"
+                android:layout_marginLeft="45dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/LichTuoiNuoc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_LichTuoiNuoc"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="Lịch tưới nước"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/green_text"
+                android:textSize="22dp"></TextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/LichTuoiCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LichTuoiNuoc">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@drawable/blu_view"
+                   android:paddingBottom="10dp">
+
+
+                  <ImageView
+                      android:layout_width="100dp"
+                      android:layout_height="100dp"
+                     android:id="@+id/img_DoAm"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      android:layout_margin="20dp"
+                      android:src="@drawable/img_Cay1"
+                     ></ImageView>
+
+                  <TextView
+                      android:id="@+id/LichDoAm"
+                      android:layout_width="210dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="25dp"
+                      android:text="Độ ẩm dưới ngưỡng 1202ml thì tự động tưới "
+
+                      android:textColor="@color/white"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
+                      android:layout_marginLeft="10dp"
+                      android:textSize="19dp"
+                      tools:ignore="HardcodedText" />
+
+
+
+                  <Button
+                      android:id="@+id/btn_ChiTietNC"
+                      android:layout_width="0dp"
+                      android:layout_height="45dp"
+
+                      android:layout_marginBottom="16dp"
+                      android:backgroundTint="@color/green_btn"
+                      android:text="Chi tiết"
+                      android:textColor="@color/white"
+                      android:textSize="15dp"
+                      android:layout_marginLeft="100dp"
+
+                      app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
+                      app:layout_constraintTop_toBottomOf="@id/LichDoAm"
+                      tools:ignore="HardcodedText" />
+
+
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MucAnhSang"
+                app:layout_constraintTop_toBottomOf="@+id/LichTuoiCard"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="Lịch thắp đèn"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/green_text"
+                android:textSize="22dp"></TextView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/AnhSangCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MucAnhSang">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@drawable/orange_view"
+                   android:paddingBottom="10dp">
+
+                  <ImageView
+                      android:layout_width="100dp"
+                      android:layout_height="100dp"
+                      android:id="@+id/img_AnhSang"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      android:layout_margin="20dp"
+                      android:src="@drawable/img_Cay3"
+                      ></ImageView>
+
+                  <TextView
+                      android:id="@+id/LichThapDen"
+                      android:layout_width="210dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="25dp"
+                      android:text="Cường độ ánh sáng dưới 100 thì tự động thắp đèn"
+
+                      android:textColor="@color/white"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
+                      android:layout_marginLeft="10dp"
+                      android:textSize="19dp"
+                      tools:ignore="HardcodedText" />
+                  <Button
+                      android:id="@+id/btn_ChiTietLichAS"
+                      android:layout_width="0dp"
+                      android:layout_height="45dp"
+                      android:layout_marginBottom="16dp"
+                      android:backgroundTint="@color/green_btn"
+                      android:text="Chi tiết"
+                      android:textColor="@color/white"
+                      android:textSize="15dp"
+                      android:layout_marginLeft="100dp"
+
+                      app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
+                      app:layout_constraintTop_toBottomOf="@+id/LichThapDen"
+                      tools:ignore="HardcodedText" />
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+         </androidx.constraintlayout.widget.ConstraintLayout>
+      </LinearLayout>
+   </ScrollView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
