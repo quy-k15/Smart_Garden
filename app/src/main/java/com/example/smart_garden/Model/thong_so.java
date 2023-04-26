@@ -1,20 +1,18 @@
 package com.example.smart_garden.Model;
 
-public class ThongSo {
-
+public class thong_so {
     private double NhietDo;
-    private double DoAm;
-    private double AnhSang;
+    private double soil_moisture;
+    private double light_intensity;
     private boolean TuoiNuoc;
     private boolean BatDen;
 
-    public ThongSo(double nhietDo, double doAm, double anhSang, boolean tuoiNuoc, boolean batDen) {
+    public thong_so(double nhietDo, double soil_moisture, double light_intensity, boolean tuoiNuoc, boolean batDen) {
         NhietDo = nhietDo;
-        DoAm = doAm;
-        AnhSang = anhSang;
+        this.soil_moisture = soil_moisture;
+        this.light_intensity = light_intensity;
         TuoiNuoc = tuoiNuoc;
         BatDen = batDen;
-
     }
 
     public double getNhietDo() {
@@ -25,20 +23,20 @@ public class ThongSo {
         NhietDo = nhietDo;
     }
 
-    public double getDoAm() {
-        return DoAm;
+    public double getSoil_moisture() {
+        return soil_moisture;
     }
 
-    public void setDoAm(double doAm) {
-        DoAm = doAm;
+    public void setSoil_moisture(double soil_moisture) {
+        this.soil_moisture = soil_moisture;
     }
 
-    public double getAnhSang() {
-        return AnhSang;
+    public double getLight_intensity() {
+        return light_intensity;
     }
 
-    public void setAnhSang(double anhSang) {
-        AnhSang = anhSang;
+    public void setLight_intensity(double light_intensity) {
+        this.light_intensity = light_intensity;
     }
 
     public boolean isTuoiNuoc() {
@@ -56,5 +54,4 @@ public class ThongSo {
     public void setBatDen(boolean batDen) {
         BatDen = batDen;
     }
-
 }
