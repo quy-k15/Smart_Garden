@@ -6,13 +6,17 @@ public class thong_so {
     private double light_intensity;
     private boolean TuoiNuoc;
     private boolean BatDen;
+    private double Muc_DoAm;
+    private double Muc_AS;
 
-    public thong_so(double nhietDo, double soil_moisture, double light_intensity, boolean tuoiNuoc, boolean batDen) {
+    public thong_so(double nhietDo, double soil_moisture, double light_intensity,  double muc_DoAm, double muc_AS) {
         NhietDo = nhietDo;
         this.soil_moisture = soil_moisture;
         this.light_intensity = light_intensity;
-        TuoiNuoc = tuoiNuoc;
-        BatDen = batDen;
+        TuoiNuoc = false;
+        BatDen = false;
+        Muc_DoAm = muc_DoAm;
+        Muc_AS = muc_AS;
     }
 
     public double getNhietDo() {
@@ -53,5 +57,21 @@ public class thong_so {
 
     public void setBatDen(boolean batDen) {
         BatDen = batDen;
+    }
+
+    public double getMuc_DoAm() {
+        return Muc_DoAm;
+    }
+
+    public void setMuc_DoAm(double muc_DoAm) {
+        Muc_DoAm = muc_DoAm;
+    }
+
+    public double getMuc_AS() {
+        return Muc_AS;
+    }
+
+    public void setMuc_AS(double muc_AS) {
+        Muc_AS = muc_AS;
     }
 }
