@@ -8,15 +8,15 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class StartAppActivity extends AppCompatActivity {
-    private Button btn_signIn;
+    private Button btn_start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_app);
-        btn_signIn = findViewById(R.id.btn_signIn);
+        btn_start = findViewById(R.id.btn_start);
 
         overridePendingTransition(R.anim.anim_in_right,R.anim.anim_out_left);
-        btn_signIn.setOnClickListener(new View.OnClickListener() {
+        btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it2 = new Intent(StartAppActivity.this,MainActivity.class);

@@ -57,22 +57,33 @@
          <androidx.constraintlayout.widget.ConstraintLayout
              android:layout_width="match_parent"
              android:layout_height="match_parent">
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ASTuDong"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Bật đèn tự động"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/green_text"
+                android:textSize="25dp"></TextView>
 
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/NguongThapDen"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ASTuDong"
+                app:layout_constraintLeft_toLeftOf="parent"
                 android:text="Hệ thống tự động thắp đèn khi cường độ ánh sáng dưới ngưỡng:"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="50dp"
                 android:textColor="@color/green_text"
                 android:textSize="20dp"></TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_CuongDoAS"
+                android:id="@+id/tv_MucAS"
                 app:layout_constraintTop_toBottomOf="@+id/NguongThapDen"
                 app:layout_constraintRight_toRightOf="parent"
                 android:text="1202"
@@ -80,13 +91,52 @@
                 android:layout_marginRight="80dp"
                 android:textColor="@color/green_text"
                 android:textSize="25dp"></TextView>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ASThuCong"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_MucAS"
+                android:text="Bật đèn thủ công"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/green_text"
+                android:textSize="25dp"></TextView>
+            <Button
+                android:id="@+id/btn_BatDen"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/green_btn"
+                android:text="Bật đèn"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="70dp"
+                app:layout_constraintTop_toBottomOf="@+id/ASThuCong"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/btn_TatDen"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/green_btn"
+                android:text="Tắt đèn"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintTop_toBottomOf="@+id/ASThuCong"
+                app:layout_constraintLeft_toRightOf="@+id/btn_BatDen"
+                tools:ignore="HardcodedText" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="550dp"
                 android:id="@+id/view"
                 android:background="@drawable/yellow_view"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CuongDoAS"
+                app:layout_constraintTop_toBottomOf="@+id/btn_BatDen"
                 android:layout_marginTop="30dp"
                ></View>
             <TextView
@@ -162,7 +212,7 @@
 
 
                   <Button
-                      android:id="@+id/btn_DoAm1204"
+                      android:id="@+id/btn_MucAS_1225"
                       android:layout_width="0dp"
                       android:layout_height="45dp"
 
@@ -239,7 +289,7 @@
 
 
                   <Button
-                      android:id="@+id/btn_DoAm2000"
+                      android:id="@+id/btn_MucAS_2200"
                       android:layout_width="0dp"
                       android:layout_height="45dp"
 
@@ -259,10 +309,6 @@
                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
-
-
-
-
 
          </androidx.constraintlayout.widget.ConstraintLayout>
       </LinearLayout>

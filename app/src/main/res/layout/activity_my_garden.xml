@@ -65,7 +65,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:text="14/03/2023"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="80dp"
                 android:textColor="@color/green_text"
                 android:textSize="25dp"></TextView>
             <TextView
@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_month"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:text="Monday"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="65dp"
                 android:textColor="@color/green_text"
                 android:textSize="20dp"></TextView>
             <TextView
@@ -89,38 +89,23 @@
                 android:layout_marginLeft="8dp"
                 android:textColor="@color/green_text"
                 android:textSize="20dp"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/DoAmDat"
-                app:layout_constraintTop_toBottomOf="@+id/tv_day"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:text="Độ ẩm"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="50dp"
-                android:textColor="@color/green_text"
-                android:textSize="22dp"></TextView>
-
-
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/DoAmCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/DoAmDat">
+                app:layout_constraintTop_toBottomOf="@+id/tv_day">
 
                <androidx.constraintlayout.widget.ConstraintLayout
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
                    android:background="@drawable/blu_view"
                    android:paddingBottom="10dp">
-
                   <ImageView
                       android:layout_width="100dp"
                       android:layout_height="100dp"
@@ -130,10 +115,6 @@
                       android:layout_margin="20dp"
                       android:src="@drawable/img_cay1"
                       ></ImageView>
-
-
-
-
                   <TextView
                       android:id="@+id/DoAm"
                       android:layout_width="wrap_content"
@@ -166,56 +147,33 @@
                       android:layout_marginTop="17dp"
                       android:layout_marginLeft="20dp"
                       android:textSize="22dp"
-                      android:text="1020 ml"
-
-
                       ></TextView>
 
                   <Button
                       android:id="@+id/btn_XemThemDoAm"
                       android:layout_width="0dp"
                       android:layout_height="45dp"
-
                       android:layout_marginBottom="16dp"
                       android:backgroundTint="@color/green_btn"
                       android:text="Xem thêm"
                       android:textColor="@color/white"
                       android:textSize="15dp"
                       android:layout_marginLeft="100dp"
-
                       app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
                       app:layout_constraintTop_toBottomOf="@id/tv_DoAm"
                       tools:ignore="HardcodedText" />
-
-
-
                </androidx.constraintlayout.widget.ConstraintLayout>
-
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MucNhietDo"
-                app:layout_constraintTop_toBottomOf="@+id/DoAmCard"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:text="Nhiệt độ"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="50dp"
-                android:textColor="@color/green_text"
-                android:textSize="22dp"></TextView>
-
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/NhietDoCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/MucNhietDo">
+                app:layout_constraintTop_toBottomOf="@+id/DoAmCard">
 
                <androidx.constraintlayout.widget.ConstraintLayout
                    android:layout_width="match_parent"
@@ -232,9 +190,6 @@
                       android:layout_margin="20dp"
                       android:src="@drawable/img_cay2"
                       ></ImageView>
-
-
-
 
                   <TextView
                       android:id="@+id/NhietDo"
@@ -268,8 +223,6 @@
                       android:layout_marginTop="17dp"
                       android:layout_marginLeft="20dp"
                       android:textSize="22dp"
-                      android:text="1020"
-
 
                       ></TextView>
                   <Button
@@ -291,17 +244,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MucAnhSang"
-                app:layout_constraintTop_toBottomOf="@+id/NhietDoCard"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:text="Ánh sáng"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="50dp"
-                android:textColor="@color/green_text"
-                android:textSize="22dp"></TextView>
 
 
             <androidx.cardview.widget.CardView
@@ -309,11 +251,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/MucAnhSang">
+                app:layout_constraintTop_toBottomOf="@+id/NhietDoCard">
 
                <androidx.constraintlayout.widget.ConstraintLayout
                    android:layout_width="match_parent"
@@ -366,17 +308,11 @@
                       android:layout_marginTop="17dp"
                       android:layout_marginLeft="20dp"
                       android:textSize="22dp"
-                      android:text="1020"
-
-
                       ></TextView>
                   <Button
                       android:id="@+id/btn_XemThem"
                       android:layout_width="0dp"
                       android:layout_height="45dp"
-
-
-
                       android:layout_marginBottom="16dp"
                       android:backgroundTint="@color/green_btn"
                       android:text="Xem thêm"
@@ -390,11 +326,6 @@
                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
-
-
-
-
-
          </androidx.constraintlayout.widget.ConstraintLayout>
       </LinearLayout>
    </ScrollView>

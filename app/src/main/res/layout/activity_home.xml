@@ -71,14 +71,50 @@
        app:layout_constraintLeft_toLeftOf="@id/tv_garden"
        android:layout_marginLeft="165dp"
        android:textSize="18dp"></TextView>
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/tv_month"
+       app:layout_constraintLeft_toLeftOf="@+id/img_home"
+       app:layout_constraintTop_toTopOf="@+id/img_home"
+       android:text="14/03/2023"
+       android:layout_marginTop="40dp"
+       android:layout_marginLeft="170dp"
+       android:textColor="@color/white"
+       android:textSize="25dp"></TextView>
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/tv_day"
+       app:layout_constraintTop_toBottomOf="@+id/tv_month"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:text="Monday"
+       android:layout_marginLeft="65dp"
+       android:textColor="@color/white"
+       android:textSize="20dp"></TextView>
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/tv_year"
+       app:layout_constraintLeft_toRightOf="@+id/tv_month"
+       app:layout_constraintTop_toTopOf="@+id/img_home"
+       android:text="2023"
+       android:layout_marginTop="15dp"
+       android:layout_marginLeft="8dp"
+       android:textColor="@color/white"
+       android:textSize="20dp"></TextView>
 
    <ImageView
+       android:id="@+id/img_home"
        android:layout_width="match_parent"
        android:layout_height="300dp"
-       android:id="@+id/img_home"
-       app:layout_constraintTop_toBottomOf="@+id/tv_garden"
        android:layout_marginTop="20dp"
        android:src="@drawable/img_home"
-       ></ImageView>
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintHorizontal_bias="0.0"
+       app:layout_constraintTop_toBottomOf="@+id/tv_garden"></ImageView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
