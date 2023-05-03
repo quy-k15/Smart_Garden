@@ -58,17 +58,31 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent">
             <TextView
-                android:layout_width="300dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/ASTuDong"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:text="Bật đèn tự động"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/green_text"
                 android:textSize="25dp"></TextView>
 
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+                android:id="@+id/btn_DenTuDong"
+                android:textOff=" Tắt"
+                android:textOn=" Bật"
+                app:layout_constraintLeft_toRightOf="@+id/ASTuDong"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="100px"
+                android:layout_marginRight="50px"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@drawable/yelow_view"
+                ></ToggleButton>
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"

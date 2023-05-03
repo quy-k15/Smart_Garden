@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ScheduleWaterActivity extends AppCompatActivity {
     private Button btn_back,btn_TuoiNuoc,btn_TatNuoc,btn_DoAm1204,btn_DoAm2000;
     private TextView tv_MucDoAm;
+    private ToggleButton btn_TuoiTuDong;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,22 @@ public class ScheduleWaterActivity extends AppCompatActivity {
                 tv_MucDoAm.setText("1204");
             }
         });
+        btn_TuoiTuDong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(btn_TuoiTuDong.isChecked())
+                {
+                    DatabaseReference databaseRef = database.getReference().child("thong_so").child("Tu_Dong_Tuoi");
+                    databaseRef.setValue(true);
+
+                }
+                else
+                {
+                    DatabaseReference databaseRef = database.getReference().child("thong_so").child("Tu_Dong_Tuoi");
+                    databaseRef.setValue(false);
+                }
+            }
+        });
     }
     public void init()
     {
@@ -69,5 +87,6 @@ public class ScheduleWaterActivity extends AppCompatActivity {
         btn_DoAm1204=findViewById(R.id.btn_DoAm1204);
         btn_DoAm2000=findViewById(R.id.btn_DoAm2000);
         tv_MucDoAm=findViewById(R.id.tv_MucDoAm);
+        btn_TuoiTuDong=findViewById(R.id.btn_TuoiTuDong);
     }
 }

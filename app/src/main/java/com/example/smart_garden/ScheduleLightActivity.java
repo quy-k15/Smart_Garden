@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ScheduleLightActivity extends AppCompatActivity {
     private Button btn_back,btn_BatDen,btn_TatDen,btn_MucAS_2200,btn_MucAS_1225;
     private TextView tv_MucAS;
+    private ToggleButton btn_DenTuDong;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +61,22 @@ public class ScheduleLightActivity extends AppCompatActivity {
                 tv_MucAS.setText("2200");
             }
         });
+        btn_DenTuDong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(btn_DenTuDong.isChecked())
+                {
+                    DatabaseReference databaseRef = database.getReference().child("thong_so").child("Den_Tu_Dong");
+                    databaseRef.setValue(true);
+
+                }
+                else
+                {
+                    DatabaseReference databaseRef = database.getReference().child("thong_so").child("Den_Tu_Dong");
+                    databaseRef.setValue(false);
+                }
+            }
+        });
     }
     public void init()
     {
@@ -68,5 +86,6 @@ public class ScheduleLightActivity extends AppCompatActivity {
         btn_MucAS_2200=findViewById(R.id.btn_MucAS_2200);
         btn_MucAS_1225=findViewById(R.id.btn_MucAS_1225);
         tv_MucAS=findViewById(R.id.tv_MucAS);
+        btn_DenTuDong=findViewById(R.id.btn_DenTuDong);
     }
 }
