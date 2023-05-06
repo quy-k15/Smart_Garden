@@ -28,7 +28,7 @@ public class MyGardenActivity extends AppCompatActivity {
     private Button btn_back;
     private DatabaseReference mDatabase;
     private FirebaseDatabase mFirebaseInstance;
-    TextView month,day, tv_DoAm,tv_AnhSang;
+    TextView month,day,year, tv_DoAm,tv_AnhSang,tv_NhietDo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +39,9 @@ public class MyGardenActivity extends AppCompatActivity {
         String formattedDate = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime);
         String[] splitDate = formattedDate.split(",");
 
-        month.setText(splitDate[1]);
-        day.setText(splitDate[0]);
+        month.setText(splitDate[1]+"/");
+        day.setText(splitDate[0]+"/");
+        year.setText(splitDate[2]);
 
 
         getThong_So();
@@ -59,8 +60,10 @@ public class MyGardenActivity extends AppCompatActivity {
         btn_back=findViewById(R.id.btn_back);
         day=findViewById(R.id.tv_day);
         month=findViewById(R.id.tv_month);
+        year=findViewById(R.id.tv_year);
         tv_DoAm=findViewById(R.id.tv_DoAm);
         tv_AnhSang=findViewById(R.id.tv_AnhSang);
+        tv_NhietDo=findViewById(R.id.tv_NhietDo);
     }
     public void getThong_So() {
 
@@ -75,14 +78,17 @@ public class MyGardenActivity extends AppCompatActivity {
                 // Lấy giá trị mới từ database và cập nhật vào UI
 //                double soilMoisture = dataSnapshot.child("soil_moisture").getValue(Double.class);
 
-                Double soilMoistureValue = dataSnapshot.child("soil_moisture").getValue(Double.class);
+                Double soilMoistureValue = dataSnapshot.child("Do_Am").getValue(Double.class);
                 double soilMoisture = soilMoistureValue != null ? soilMoistureValue.doubleValue() : 0.0;
-                Double lightIntensityValue = dataSnapshot.child("light_intensity").getValue(Double.class);
+                Double lightIntensityValue = dataSnapshot.child("Do_Sang").getValue(Double.class);
                 double lightIntensity= lightIntensityValue != null ? lightIntensityValue.doubleValue() : 0.0;
+                Double NhietDoValue = dataSnapshot.child("Nhiet_Do").getValue(Double.class);
+                double NhietDo= NhietDoValue != null ? NhietDoValue.doubleValue() : 0.0;
 
                 // Cập nhật các thuộc tính trong giao diện người dùng
                 tv_DoAm.setText(String.valueOf(soilMoisture));
                 tv_AnhSang.setText(String.valueOf(lightIntensity));
+                tv_NhietDo.setText(String.valueOf(NhietDo));
             }
 
             @Override
