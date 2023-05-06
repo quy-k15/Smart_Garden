@@ -61,34 +61,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_month"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/tv_day"
                 app:layout_constraintTop_toTopOf="parent"
                 android:text="14/03/2023"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="80dp"
                 android:textColor="@color/green_text"
                 android:textSize="25dp"></TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_day"
-                app:layout_constraintTop_toBottomOf="@+id/tv_month"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:text="Monday"
-                android:layout_marginLeft="65dp"
+                android:layout_marginLeft="80dp"
                 android:textColor="@color/green_text"
-                android:textSize="20dp"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_year"
-                app:layout_constraintLeft_toRightOf="@+id/tv_month"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="2023"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="8dp"
-                android:textColor="@color/green_text"
-                android:textSize="20dp"></TextView>
+                android:layout_marginTop="20dp"
+                android:textSize="25dp"></TextView>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/DoAmCard"
@@ -99,7 +90,7 @@
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_day">
+                app:layout_constraintTop_toBottomOf="@+id/tv_month">
 
                <androidx.constraintlayout.widget.ConstraintLayout
                    android:layout_width="match_parent"
@@ -113,7 +104,7 @@
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toLeftOf="parent"
                       android:layout_margin="20dp"
-                      android:src="@drawable/img_cay1"
+                      android:src="@drawable/img_water_scarcity"
                       ></ImageView>
                   <TextView
                       android:id="@+id/DoAm"
@@ -126,27 +117,20 @@
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
                       android:layout_marginLeft="20dp"
-                      android:textSize="21dp"
+                      android:textSize="22dp"
                       tools:ignore="HardcodedText" />
-                  <ImageView
-                      android:layout_width="30dp"
-                      android:layout_height="30dp"
-                      android:id="@+id/ic_DoAm"
-                      app:layout_constraintTop_toBottomOf="@+id/DoAm"
-                      app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
-                      android:layout_marginLeft="20dp"
-                      android:src="@drawable/ic_doam"
-                      android:layout_marginTop="17dp"
-                      ></ImageView>
+
                   <TextView
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:id="@+id/tv_DoAm"
                       app:layout_constraintTop_toBottomOf="@+id/DoAm"
-                      app:layout_constraintLeft_toRightOf="@+id/ic_DoAm"
+                      app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
                       android:layout_marginTop="17dp"
                       android:layout_marginLeft="20dp"
-                      android:textSize="22dp"
+                      android:textSize="25dp"
+
+
                       ></TextView>
 
                   <Button
@@ -158,9 +142,13 @@
                       android:text="Xem thêm"
                       android:textColor="@color/white"
                       android:textSize="15dp"
-                      android:layout_marginLeft="100dp"
-                      app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
-                      app:layout_constraintTop_toBottomOf="@id/tv_DoAm"
+                      android:layout_marginRight="20dp"
+                      android:layout_marginTop="10dp"
+
+                      app:layout_constraintRight_toRightOf="parent"
+
+
+                      app:layout_constraintTop_toBottomOf="@+id/DoAm"
                       tools:ignore="HardcodedText" />
                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -188,7 +176,7 @@
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toLeftOf="parent"
                       android:layout_margin="20dp"
-                      android:src="@drawable/img_cay2"
+                      android:src="@drawable/img_temperature_check"
                       ></ImageView>
 
                   <TextView
@@ -202,27 +190,27 @@
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toRightOf="@+id/img_NhietDo"
                       android:layout_marginLeft="20dp"
-                      android:textSize="21dp"
+                      android:textSize="22dp"
                       tools:ignore="HardcodedText" />
-                  <ImageView
-                      android:layout_width="40dp"
-                      android:layout_height="40dp"
-                      android:id="@+id/ic_NhietDo"
-                      app:layout_constraintTop_toBottomOf="@+id/NhietDo"
-                      app:layout_constraintLeft_toRightOf="@+id/img_NhietDo"
-                      android:layout_marginLeft="20dp"
-                      android:src="@drawable/ic_nhietdo"
-                      android:layout_marginTop="15dp"
-                      ></ImageView>
+<!--                  <ImageView-->
+<!--                      android:layout_width="40dp"-->
+<!--                      android:layout_height="40dp"-->
+<!--                      android:id="@+id/ic_NhietDo"-->
+<!--                      app:layout_constraintTop_toBottomOf="@+id/NhietDo"-->
+<!--                      app:layout_constraintLeft_toRightOf="@+id/img_NhietDo"-->
+<!--                      android:layout_marginLeft="20dp"-->
+<!--                      android:src="@drawable/ic_nhietdo"-->
+<!--                      android:layout_marginTop="15dp"-->
+<!--                      ></ImageView>-->
                   <TextView
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:id="@+id/tv_NhietDo"
                       app:layout_constraintTop_toBottomOf="@+id/NhietDo"
-                      app:layout_constraintLeft_toRightOf="@+id/ic_NhietDo"
+                      app:layout_constraintLeft_toRightOf="@+id/img_NhietDo"
                       android:layout_marginTop="17dp"
                       android:layout_marginLeft="20dp"
-                      android:textSize="22dp"
+                      android:textSize="25dp"
 
                       ></TextView>
                   <Button
@@ -235,10 +223,10 @@
                       android:text="Xem thêm"
                       android:textColor="@color/white"
                       android:textSize="15dp"
-                      android:layout_marginLeft="100dp"
+                      android:layout_marginRight="20dp"
 
-                      app:layout_constraintLeft_toRightOf="@+id/img_NhietDo"
-                      app:layout_constraintTop_toBottomOf="@id/tv_NhietDo"
+                      app:layout_constraintRight_toRightOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/NhietDo"
                       tools:ignore="HardcodedText" />
                </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -270,7 +258,7 @@
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toLeftOf="parent"
                       android:layout_margin="20dp"
-                      android:src="@drawable/img_cay3"
+                      android:src="@drawable/img_sunny"
                       ></ImageView>
 
 
@@ -287,27 +275,27 @@
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
                       android:layout_marginLeft="20dp"
-                      android:textSize="19dp"
+                      android:textSize="22dp"
                       tools:ignore="HardcodedText" />
-                  <ImageView
-                      android:layout_width="40dp"
-                      android:layout_height="40dp"
-                      android:id="@+id/ic_AnhSang"
-                      app:layout_constraintTop_toBottomOf="@+id/AnhSang"
-                      app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
-                      android:layout_marginLeft="20dp"
-                      android:src="@drawable/ic_anhsang"
-                      android:layout_marginTop="15dp"
-                      ></ImageView>
+<!--                  <ImageView-->
+<!--                      android:layout_width="40dp"-->
+<!--                      android:layout_height="40dp"-->
+<!--                      android:id="@+id/ic_AnhSang"-->
+<!--                      app:layout_constraintTop_toBottomOf="@+id/AnhSang"-->
+<!--                      app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"-->
+<!--                      android:layout_marginLeft="20dp"-->
+<!--                      android:src="@drawable/ic_anhsang"-->
+<!--                      android:layout_marginTop="15dp"-->
+<!--                      ></ImageView>-->
                   <TextView
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:id="@+id/tv_AnhSang"
                       app:layout_constraintTop_toBottomOf="@+id/AnhSang"
-                      app:layout_constraintLeft_toRightOf="@+id/ic_AnhSang"
+                      app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
                       android:layout_marginTop="17dp"
                       android:layout_marginLeft="20dp"
-                      android:textSize="22dp"
+                      android:textSize="25dp"
                       ></TextView>
                   <Button
                       android:id="@+id/btn_XemThem"
@@ -318,10 +306,9 @@
                       android:text="Xem thêm"
                       android:textColor="@color/white"
                       android:textSize="15dp"
-                      android:layout_marginLeft="100dp"
-
-                      app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
-                      app:layout_constraintTop_toBottomOf="@id/tv_AnhSang"
+                      android:layout_marginRight="20dp"
+                      app:layout_constraintRight_toRightOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/AnhSang"
                       tools:ignore="HardcodedText" />
                </androidx.constraintlayout.widget.ConstraintLayout>
 

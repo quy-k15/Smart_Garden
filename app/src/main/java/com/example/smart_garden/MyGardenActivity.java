@@ -28,7 +28,7 @@ public class MyGardenActivity extends AppCompatActivity {
     private Button btn_back;
     private DatabaseReference mDatabase;
     private FirebaseDatabase mFirebaseInstance;
-    TextView month,day,year, tv_DoAm,tv_AnhSang;
+    TextView month,day, tv_DoAm,tv_AnhSang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +41,7 @@ public class MyGardenActivity extends AppCompatActivity {
 
         month.setText(splitDate[1]);
         day.setText(splitDate[0]);
-        year.setText(splitDate[2]);
+
 
         getThong_So();
 
@@ -59,7 +59,6 @@ public class MyGardenActivity extends AppCompatActivity {
         btn_back=findViewById(R.id.btn_back);
         day=findViewById(R.id.tv_day);
         month=findViewById(R.id.tv_month);
-        year=findViewById(R.id.tv_year);
         tv_DoAm=findViewById(R.id.tv_DoAm);
         tv_AnhSang=findViewById(R.id.tv_AnhSang);
     }

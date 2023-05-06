@@ -18,8 +18,6 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_garden,btn_plants;
-    TextView month,day,year;
-    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +33,7 @@ public class MainActivity extends AppCompatActivity {
         String formattedDate = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime);
         String[] splitDate = formattedDate.split(",");
 
-        month.setText(splitDate[1]);
-        day.setText(splitDate[0]);
-        year.setText(splitDate[2]);
+
         overridePendingTransition(R.anim.anim_in_right,R.anim.anim_out_left);
         btn_plants.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
     {
         btn_garden=findViewById(R.id.btn_garden);
         btn_plants=findViewById(R.id.btn_plants);
-        day=findViewById(R.id.tv_day);
-        month=findViewById(R.id.tv_month);
-        year=findViewById(R.id.tv_year);
+
     }
 }

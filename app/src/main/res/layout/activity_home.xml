@@ -30,11 +30,11 @@
 
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/btn_garden"
-       android:layout_width="120dp"
-       android:layout_height="120dp"
-       android:background="@drawable/img_3"
-       android:layout_marginTop="20dp"
-       android:layout_marginLeft="60dp"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:background="@drawable/img_tree"
+       android:layout_marginTop="40dp"
+       android:layout_marginLeft="70dp"
        android:textSize="25dp"
        app:layout_constraintTop_toBottomOf="@+id/tv_home"
        app:layout_constraintLeft_toLeftOf="parent"
@@ -49,14 +49,15 @@
        app:layout_constraintTop_toBottomOf="@+id/btn_garden"
        app:layout_constraintLeft_toLeftOf="parent"
        android:layout_marginLeft="70dp"
+       android:layout_marginTop="10dp"
        android:textSize="18dp"></TextView>
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/btn_plants"
-       android:layout_width="120dp"
-       android:layout_height="120dp"
-       android:background="@drawable/img_4"
-       android:layout_marginLeft="40dp"
-       android:layout_marginTop="20dp"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:background="@drawable/img_my_schedule"
+       android:layout_marginLeft="60dp"
+       android:layout_marginTop="40dp"
 
        android:textSize="25dp"
        app:layout_constraintTop_toBottomOf="@+id/tv_home"
@@ -69,40 +70,9 @@
        android:text="Lịch của tôi"
        app:layout_constraintTop_toBottomOf="@+id/btn_plants"
        app:layout_constraintLeft_toLeftOf="@id/tv_garden"
-       android:layout_marginLeft="165dp"
-       android:textSize="18dp"></TextView>
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/tv_month"
-       app:layout_constraintLeft_toLeftOf="@+id/img_home"
-       app:layout_constraintTop_toTopOf="@+id/img_home"
-       android:text="14/03/2023"
-       android:layout_marginTop="40dp"
        android:layout_marginLeft="170dp"
-       android:textColor="@color/white"
-       android:textSize="25dp"></TextView>
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/tv_day"
-       app:layout_constraintTop_toBottomOf="@+id/tv_month"
-       app:layout_constraintLeft_toLeftOf="parent"
-       android:text="Monday"
-       android:layout_marginLeft="65dp"
-       android:textColor="@color/white"
-       android:textSize="20dp"></TextView>
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/tv_year"
-       app:layout_constraintLeft_toRightOf="@+id/tv_month"
-       app:layout_constraintTop_toTopOf="@+id/img_home"
-       android:text="2023"
-       android:layout_marginTop="15dp"
-       android:layout_marginLeft="8dp"
-       android:textColor="@color/white"
-       android:textSize="20dp"></TextView>
+       android:layout_marginTop="10dp"
+       android:textSize="18dp"></TextView>
 
    <ImageView
        android:id="@+id/img_home"
