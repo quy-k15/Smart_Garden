@@ -69,7 +69,6 @@ public class ScheduleWaterActivity extends AppCompatActivity {
                 {
                     DatabaseReference databaseRef = database.getReference().child("thong_so").child("Tu_Dong_Tuoi");
                     databaseRef.setValue(true);
-
                 }
                 else
                 {

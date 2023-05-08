@@ -63,17 +63,13 @@ public class MyScheduleActivity extends AppCompatActivity {
 
         // Lấy đường dẫn đến bảng ThongSo
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("thong_so");
-
         // Đăng ký một listener để theo dõi thay đổi giá trị trên database
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Lấy giá trị mới từ database và cập nhật vào UI
-//                double soilMoisture = dataSnapshot.child("soil_moisture").getValue(Double.class);
-
                 Double Muc_DoAm = dataSnapshot.child("Muc_DoAm").getValue(Double.class);
                 Double Muc_AS = dataSnapshot.child("Muc_AS").getValue(Double.class);
-
                 // Cập nhật các thuộc tính trong giao diện người dùng
                 tv_MucDoAm.setText(String.valueOf(Muc_DoAm));
                 tv_MucAs.setText(String.valueOf(Muc_AS));

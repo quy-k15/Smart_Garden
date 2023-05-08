@@ -66,31 +66,21 @@ public class MyGardenActivity extends AppCompatActivity {
         tv_NhietDo=findViewById(R.id.tv_NhietDo);
     }
     public void getThong_So() {
-
-
         // Lấy đường dẫn đến bảng ThongSo
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("thong_so");
-
         // Đăng ký một listener để theo dõi thay đổi giá trị trên database
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Lấy giá trị mới từ database và cập nhật vào UI
-//                double soilMoisture = dataSnapshot.child("soil_moisture").getValue(Double.class);
-
-                Double soilMoistureValue = dataSnapshot.child("Do_Am").getValue(Double.class);
-                double soilMoisture = soilMoistureValue != null ? soilMoistureValue.doubleValue() : 0.0;
-                Double lightIntensityValue = dataSnapshot.child("Do_Sang").getValue(Double.class);
-                double lightIntensity= lightIntensityValue != null ? lightIntensityValue.doubleValue() : 0.0;
+                Double DoAmValue = dataSnapshot.child("Do_Am").getValue(Double.class);
+                Double AnhSangValue = dataSnapshot.child("Do_Sang").getValue(Double.class);
                 Double NhietDoValue = dataSnapshot.child("Nhiet_Do").getValue(Double.class);
-                double NhietDo= NhietDoValue != null ? NhietDoValue.doubleValue() : 0.0;
-
                 // Cập nhật các thuộc tính trong giao diện người dùng
-                tv_DoAm.setText(String.valueOf(soilMoisture));
-                tv_AnhSang.setText(String.valueOf(lightIntensity));
-                tv_NhietDo.setText(String.valueOf(NhietDo));
+                tv_DoAm.setText(String.valueOf(DoAmValue));
+                tv_AnhSang.setText(String.valueOf(AnhSangValue));
+                tv_NhietDo.setText(String.valueOf(NhietDoValue));
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Xử lý khi có lỗi xảy ra
