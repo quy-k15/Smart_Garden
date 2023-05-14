@@ -2,7 +2,6 @@ package com.example.smart_garden;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,48 +14,50 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MyScheduleActivity extends AppCompatActivity {
-    private Button btn_back,btn_LichTuoiNuoc,btn_LichThapDen;
-    private TextView tv_MucDoAm,tv_MucAs;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class AboutTreeActivity extends AppCompatActivity {
+    private Button btn_back;
+    private DatabaseReference mDatabase;
+    private FirebaseDatabase mFirebaseInstance;
+    TextView month,day,year, tv_DoAm,tv_AnhSang,tv_NhietDo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_schedule);
+        setContentView(R.layout.activity_about_tree);
+        init();
+
+        Date currentTime = Calendar.getInstance().getTime();
+        String formattedDate = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime);
+        String[] splitDate = formattedDate.split(",");
+
+        month.setText(splitDate[1]+"/");
+        day.setText(splitDate[0]+"/");
+        year.setText(splitDate[2]);
+
+
+        getThong_So();
 
         overridePendingTransition(R.anim.anim_in_right,R.anim.anim_out_left);
-        init();
-        getThong_So();
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it1 = new Intent(MyScheduleActivity.this,MainActivity.class);
+                Intent it1 = new Intent(AboutTreeActivity.this,MainActivity.class);
                 startActivity(it1);
             }
         });
-        btn_LichTuoiNuoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it2 = new Intent(MyScheduleActivity.this,ScheduleWaterActivity.class);
-                startActivity(it2);
-            }
-        });
-        btn_LichThapDen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it3 = new Intent(MyScheduleActivity.this,ScheduleLightActivity.class);
-                startActivity(it3);
-            }
-        });
-
     }
-
     public void init()
     {
         btn_back=findViewById(R.id.btn_back);
-        btn_LichTuoiNuoc=findViewById(R.id.btn_LichTuoiNuoc);
-        btn_LichThapDen=findViewById(R.id.btn_LichThapDen);
-        tv_MucDoAm=findViewById(R.id.tv_MucDoAm);
-        tv_MucAs=findViewById(R.id.tv_MucAs);
+        day=findViewById(R.id.tv_day);
+        month=findViewById(R.id.tv_month);
+        year=findViewById(R.id.tv_year);
+        tv_DoAm=findViewById(R.id.tv_DoAm);
+        tv_AnhSang=findViewById(R.id.tv_AnhSang);
+        tv_NhietDo=findViewById(R.id.tv_NhietDo);
     }
     public void getThong_So() {
         // Lấy đường dẫn đến bảng ThongSo
@@ -66,11 +67,13 @@ public class MyScheduleActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Lấy giá trị mới từ database và cập nhật vào UI
-                Double Muc_DoAm = dataSnapshot.child("Muc_DoAm").getValue(Double.class);
-                Double Muc_AS = dataSnapshot.child("Muc_AS").getValue(Double.class);
+                Double DoAmValue = dataSnapshot.child("Do_Am").getValue(Double.class);
+                Double AnhSangValue = dataSnapshot.child("Do_Sang").getValue(Double.class);
+                Double NhietDoValue = dataSnapshot.child("Nhiet_Do").getValue(Double.class);
                 // Cập nhật các thuộc tính trong giao diện người dùng
-                tv_MucDoAm.setText(String.valueOf(Muc_DoAm) +" %");
-                tv_MucAs.setText(String.valueOf(Muc_AS) + "Lux");
+                tv_DoAm.setText(String.valueOf(DoAmValue) + "%");
+                tv_AnhSang.setText(String.valueOf(AnhSangValue)+" Lux");
+                tv_NhietDo.setText(String.valueOf(NhietDoValue)+" °C");
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -80,5 +83,8 @@ public class MyScheduleActivity extends AppCompatActivity {
         // Đăng ký listener với đường dẫn của bảng ThongSo trong Firebase Realtime Database
         databaseRef.addValueEventListener(valueEventListener);
     }
+
+
+
 
 }

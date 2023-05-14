@@ -203,7 +203,7 @@
                       android:layout_width="220dp"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="15dp"
-                      android:text="Tự động thắp sáng khi cường độ dưới 1225"
+                      android:text="Tự động thắp sáng khi cường độ dưới 1225 Lux"
 
                       android:textColor="@color/green_text"
                       app:layout_constraintTop_toTopOf="parent"
@@ -280,7 +280,7 @@
                       android:layout_width="220dp"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="15dp"
-                      android:text="Tự động thắp sáng khi cường độ dưới 2200"
+                      android:text="Tự động thắp sáng khi cường độ dưới 50 Lux"
 
                       android:textColor="@color/green_text"
                       app:layout_constraintTop_toTopOf="parent"

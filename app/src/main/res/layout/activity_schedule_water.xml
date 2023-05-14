@@ -103,7 +103,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_goneMarginTop="20dp"
                 android:layout_marginRight="60dp"
-                android:text="1202ml"
+                android:text="1202%"
                 android:textColor="@color/green_text"
                 android:textSize="25dp"></TextView>
             <TextView
@@ -200,11 +200,11 @@
                       ></ImageView>
 
                   <TextView
-                      android:id="@+id/tv_DoAm1"
+                      android:id="@+id/tv_DoAm50"
                       android:layout_width="220dp"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="15dp"
-                      android:text="Tự động tưới khi độ ẩm dưới 1204"
+                      android:text="Tự động tưới khi độ ẩm dưới 50%"
 
                       android:textColor="@color/green_text"
                       app:layout_constraintTop_toTopOf="parent"
@@ -219,7 +219,7 @@
                       android:layout_marginTop="5dp"
                       android:text="Phù hợp: Cây ưa ẩm"
                       android:textColor="@color/green_text"
-                      app:layout_constraintTop_toBottomOf="@+id/tv_DoAm1"
+                      app:layout_constraintTop_toBottomOf="@+id/tv_DoAm50"
                       app:layout_constraintLeft_toRightOf="@+id/img_DoAm1"
                       android:layout_marginLeft="20dp"
                       android:textSize="18dp"
@@ -227,7 +227,7 @@
 
 
                   <Button
-                      android:id="@+id/btn_DoAm1204"
+                      android:id="@+id/btn_DoAm50"
                       android:layout_width="0dp"
                       android:layout_height="45dp"
 
@@ -281,7 +281,7 @@
                       android:layout_width="220dp"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="15dp"
-                      android:text="Tự động tưới khi độ ẩm dưới 2000"
+                      android:text="Tự động tưới khi độ ẩm dưới 20%"
 
                       android:textColor="@color/green_text"
                       app:layout_constraintTop_toTopOf="parent"
@@ -304,7 +304,7 @@
 
 
                   <Button
-                      android:id="@+id/btn_DoAm2000"
+                      android:id="@+id/btn_DoAm20"
                       android:layout_width="0dp"
                       android:layout_height="45dp"
 

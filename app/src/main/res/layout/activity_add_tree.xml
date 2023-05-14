@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img"
+        app:layout_constraintRight_toLeftOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        ></ImageView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:gravity="center_horizontal"
+        android:shadowDx="0"
+        android:shadowDy="4"
+        android:shadowRadius="4"
+        android:text="Smart Garden"
+        android:textColor="@color/green_text"
+        android:textSize="@dimen/_36ssp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/logo"
+        tools:ignore="HardcodedText" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tree_info"
+        android:layout_width="350dp"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blu_view"
+            android:paddingBottom="10dp">
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="0.3dp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@color/sky"
+                android:scrollbarThumbHorizontal="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Thong_Tin_Cay" />
+
+            <TextView
+                android:id="@+id/tv_Thong_Tin_Cay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+
+                android:text="Điền thông tin cây"
+                android:textColor="@color/green_text"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_Thong_Tin_Cay"
+                app:layout_constraintTop_toBottomOf="@+id/divider">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/ic_Name"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/seedling"
+                        ></ImageView>
+
+                    <TextView
+                        android:id="@+id/nameText"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="Tên:"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/green_text"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:id="@+id/txt_Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="15dp"
+
+                        android:textSize="20dp"
+                        android:textColor="@color/green_text" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/ic_DoAm"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_water"
+                        ></ImageView>
+
+                    <TextView
+                        android:id="@+id/DoAm"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green_text"
+                        android:text="Độ ẩm (%):"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:id="@+id/txt_DoAm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="15dp"
+
+                        android:textColor="@color/green_text" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/ic_NhietDo"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_anhsang"
+                        ></ImageView>
+
+                    <TextView
+                        android:id="@+id/AnhSang"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green_text"
+                        android:text="Độ Sáng(Lux):"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:id="@+id/txt_DoSang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="15dp"
+
+                        android:textColor="@color/green_text" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/img_Tree"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/tree_info"
+        app:layout_constraintEnd_toEndOf="@+id/tree_info"
+        app:layout_constraintStart_toStartOf="@+id/tree_info"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/img_tree_add"
+        ></ImageView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signin"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="48dp"
+        android:background="@drawable/blue_round_button"
+        android:backgroundTint="@color/green"
+        android:text="Thêm vào Vườn"
+        android:textColor="@color/white"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_Tree"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

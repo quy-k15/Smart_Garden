@@ -77,16 +77,15 @@ public class MyGardenActivity extends AppCompatActivity {
                 Double AnhSangValue = dataSnapshot.child("Do_Sang").getValue(Double.class);
                 Double NhietDoValue = dataSnapshot.child("Nhiet_Do").getValue(Double.class);
                 // Cập nhật các thuộc tính trong giao diện người dùng
-                tv_DoAm.setText(String.valueOf(DoAmValue));
-                tv_AnhSang.setText(String.valueOf(AnhSangValue));
-                tv_NhietDo.setText(String.valueOf(NhietDoValue));
+                tv_DoAm.setText(String.valueOf(DoAmValue) + "%");
+                tv_AnhSang.setText(String.valueOf(AnhSangValue)+" Lux");
+                tv_NhietDo.setText(String.valueOf(NhietDoValue)+" °C");
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Xử lý khi có lỗi xảy ra
             }
         };
-
         // Đăng ký listener với đường dẫn của bảng ThongSo trong Firebase Realtime Database
         databaseRef.addValueEventListener(valueEventListener);
     }

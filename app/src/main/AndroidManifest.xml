@@ -37,6 +37,9 @@
         <activity
             android:name=".MyScheduleActivity"
             android:exported="false" />
+        <activity
+            android:name=".AboutTreeActivity"
+            android:exported="false" />
 
         <activity
             android:name=".MyGardenActivity"

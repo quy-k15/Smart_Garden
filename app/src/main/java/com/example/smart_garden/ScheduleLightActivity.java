@@ -9,8 +9,11 @@ import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ScheduleLightActivity extends AppCompatActivity {
     private Button btn_back,btn_BatDen,btn_TatDen,btn_MucAS_2200,btn_MucAS_1225;
@@ -23,6 +26,7 @@ public class ScheduleLightActivity extends AppCompatActivity {
 
         overridePendingTransition(R.anim.anim_in_right,R.anim.anim_out_left);
         init();
+        getThong_So();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,15 +54,15 @@ public class ScheduleLightActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DatabaseReference databaseRef = database.getReference().child("thong_so").child("Muc_AS");
                 databaseRef.setValue(1225); //Thay đổi giá trị của node "Muc_AS" thành 1225
-                tv_MucAS.setText("1225");
+                tv_MucAS.setText("1225 Lux");
             }
         });
         btn_MucAS_2200.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatabaseReference databaseRef = database.getReference().child("thong_so").child("Muc_AS");
-                databaseRef.setValue(2200); //Thay đổi giá trị của node "Muc_AS" thành 2200
-                tv_MucAS.setText("2200");
+                databaseRef.setValue(50); //Thay đổi giá trị của node "Muc_AS" thành 2200
+                tv_MucAS.setText("50 Lux");
             }
         });
         btn_DenTuDong.setOnClickListener(new View.OnClickListener() {
@@ -88,4 +92,25 @@ public class ScheduleLightActivity extends AppCompatActivity {
         tv_MucAS=findViewById(R.id.tv_MucAS);
         btn_DenTuDong=findViewById(R.id.btn_DenTuDong);
     }
+    public void getThong_So() {
+        // Lấy đường dẫn đến bảng ThongSo
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("thong_so");
+        // Đăng ký một listener để theo dõi thay đổi giá trị trên database
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Lấy giá trị mới từ database và cập nhật vào UI
+                Double MucAnhSangValue = dataSnapshot.child("Muc_AS").getValue(Double.class);
+                // Cập nhật các thuộc tính trong giao diện người dùng
+                tv_MucAS.setText(String.valueOf(MucAnhSangValue)+" Lux");
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý khi có lỗi xảy ra
+            }
+        };
+        // Đăng ký listener với đường dẫn của bảng ThongSo trong Firebase Realtime Database
+        databaseRef.addValueEventListener(valueEventListener);
+    }
+
 }
