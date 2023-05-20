@@ -40,6 +40,9 @@
         <activity
             android:name=".AboutTreeActivity"
             android:exported="false" />
+        <activity
+            android:name=".AddTreeActivity"
+            android:exported="false" />
 
         <activity
             android:name=".MyGardenActivity"

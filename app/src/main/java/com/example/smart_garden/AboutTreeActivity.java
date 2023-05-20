@@ -12,6 +12,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
@@ -22,11 +23,16 @@ public class AboutTreeActivity extends AppCompatActivity {
     private Button btn_back;
     private DatabaseReference mDatabase;
     private FirebaseDatabase mFirebaseInstance;
+    private String treeID;
+    Intent intent;
     TextView month,day,year, tv_DoAm,tv_AnhSang,tv_NhietDo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_tree);
+        intent = getIntent();
+        treeID = intent.getStringExtra("TreeID");
         init();
 
         Date currentTime = Calendar.getInstance().getTime();
@@ -61,7 +67,8 @@ public class AboutTreeActivity extends AppCompatActivity {
     }
     public void getThong_So() {
         // Lấy đường dẫn đến bảng ThongSo
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("thong_so");
+//        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("thong_so");
+        Query treedata = FirebaseDatabase.getInstance().getReference().child("Tree").orderByChild("ID_Tree").equalTo(treeID);
         // Đăng ký một listener để theo dõi thay đổi giá trị trên database
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -81,7 +88,7 @@ public class AboutTreeActivity extends AppCompatActivity {
             }
         };
         // Đăng ký listener với đường dẫn của bảng ThongSo trong Firebase Realtime Database
-        databaseRef.addValueEventListener(valueEventListener);
+        treedata.addValueEventListener(valueEventListener);
     }
 
 
