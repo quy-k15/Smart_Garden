@@ -10,9 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smart_garden.Model.Tree;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -116,8 +120,27 @@ public class AddTreeActivity extends AppCompatActivity {
         name=edit_Name.getText().toString();
         mucDoAm = Double.parseDouble(edit_DoAm.getText().toString());
         mucAS = Double.parseDouble(edit_DoSang.getText().toString());
-        writeNewTree(name,mucDoAm,mucAS);
-        Toast.makeText(AddTreeActivity.this, "Thêm cây thành công!", Toast.LENGTH_LONG).show();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        String treeId = mDatabase.child("Tree").push().getKey();
+        Tree tree = new Tree(name, mucDoAm, mucAS);
+        tree.setId_Tree(treeId); // Thiết lập giá trị ID cho đối tượng Tree
+
+        FirebaseDatabase.getInstance().getReference("Tree").child(treeId)
+            .setValue(tree).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(AddTreeActivity.this,"Thêm cây thành công",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(AddTreeActivity.this,e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                }
+            });
+//        writeNewTree(name,mucDoAm,mucAS);
         edit_Name.setText("");
         edit_DoAm.setText("");
         edit_DoSang.setText("");
@@ -125,13 +148,14 @@ public class AddTreeActivity extends AppCompatActivity {
 
     }
 
-    public void writeNewTree(String name, double mucDoAm, double mucAS) {
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        String treeId = mDatabase.child("Tree").push().getKey();
-        Tree tree = new Tree(name, mucDoAm, mucAS);
-        tree.setID_Tree(treeId); // Thiết lập giá trị ID cho đối tượng Tree
-        mDatabase.child("Tree").child(treeId).setValue(tree);
-    }
+//    public void writeNewTree(String name, double mucDoAm, double mucAS) {
+//        mDatabase = FirebaseDatabase.getInstance().getReference();
+//        String treeId = mDatabase.child("Tree").push().getKey();
+//        Tree tree = new Tree(name, mucDoAm, mucAS);
+//        tree.setID_Tree(treeId); // Thiết lập giá trị ID cho đối tượng Tree
+//        mDatabase.child("Tree").child(name).setValue(tree);
+//
+//    }
     public void init()
     {
         edit_Name=findViewById(R.id.edit_Name);

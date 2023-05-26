@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/tv_WaterAutomatic"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:text="Tưới nước thủ công"
+       android:layout_marginTop="20dp"
+       android:layout_marginLeft="60dp"
+       android:textColor="@color/green_text"
+       android:textSize="30dp"></TextView>
+
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/btn_info_user"
+       android:layout_width="35dp"
+       android:layout_height="35dp"
+       android:layout_marginTop="20dp"
+       android:background="@drawable/icon_user"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_marginRight="30dp" />
+
+
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/btn_back"
+       android:layout_width="35dp"
+       android:layout_height="35dp"
+       android:layout_marginStart="16dp"
+       android:layout_marginTop="20dp"
+       android:background="@drawable/btn_back"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+
+   <ScrollView
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:layout_marginTop="8dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/tv_WaterAutomatic">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TuoiThuCong"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Tưới nước thủ công"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/green_text"
+                android:textSize="25dp"></TextView>
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+               android:id="@+id/btn_TuoiThuCong"
+                android:textOff=" Tắt"
+                android:textOn=" Bật"
+                app:layout_constraintLeft_toRightOf="@+id/TuoiThuCong"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="100px"
+                android:layout_marginRight="50px"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@drawable/yelow_view"
+               ></ToggleButton>
+
+            <Button
+                android:id="@+id/btn_TuoiNuoc"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/green_btn"
+                android:text="Tưới nước"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toBottomOf="@+id/TuoiThuCong"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/btn_TatNuoc"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/green_btn"
+                android:text="Ngưng tưới"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toBottomOf="@+id/TuoiThuCong"
+                app:layout_constraintLeft_toRightOf="@+id/btn_TuoiNuoc"
+                tools:ignore="HardcodedText" />
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="550dp"-->
+<!--                android:id="@+id/view"-->
+<!--                android:background="@drawable/green1_view"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btn_TuoiNuoc"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--               ></View>-->
+            <ImageView
+                android:id="@+id/img_Tree"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_TatNuoc"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/img_tree_add"
+                ></ImageView>
+
+         </androidx.constraintlayout.widget.ConstraintLayout>
+      </LinearLayout>
+   </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

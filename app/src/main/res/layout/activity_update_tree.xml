@@ -79,7 +79,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="4dp"
 
-                android:text="Điền thông tin cây mới"
+                android:text="Chỉnh sửa thông tin cây"
                 android:textColor="@color/green_text"
                 android:textSize="25dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -212,18 +212,32 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_AddTree"
-        android:layout_width="@dimen/_250sdp"
+        android:id="@+id/btn_UpdateTree"
+        android:layout_width="145dp"
         android:layout_height="48dp"
         android:background="@drawable/blue_round_button"
         android:backgroundTint="@color/green"
-        android:text="Thêm vào Vườn"
+        android:text="Chỉnh sửa"
         android:textColor="@color/white"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
-        android:textSize="25dp"
+        android:textSize="20dp"
         app:layout_constraintTop_toBottomOf="@+id/img_Tree"
         app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="HardcodedText" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_DeleteTree"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+        android:background="@drawable/blue_round_button"
+        android:backgroundTint="@color/sunset"
+        android:text="Xóa"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_Tree"
+        app:layout_constraintLeft_toRightOf="@+id/btn_UpdateTree"
         tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

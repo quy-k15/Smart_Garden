@@ -9,12 +9,12 @@
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:id="@+id/tv_ScheduleWater"
+       android:id="@+id/tv_WaterAutomatic"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintLeft_toLeftOf="parent"
-       android:text="Lịch tưới nước"
+       android:text="Tưới nước theo giờ"
        android:layout_marginTop="20dp"
-       android:layout_marginLeft="80dp"
+       android:layout_marginLeft="60dp"
        android:textColor="@color/green_text"
        android:textSize="30dp"></TextView>
 
@@ -27,6 +27,7 @@
        app:layout_constraintRight_toRightOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        android:layout_marginRight="30dp" />
+
 
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/btn_back"
@@ -46,7 +47,7 @@
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/tv_ScheduleWater">
+       app:layout_constraintTop_toBottomOf="@+id/tv_WaterAutomatic">
 
       <LinearLayout
           android:layout_width="match_parent"
@@ -63,7 +64,7 @@
                 android:id="@+id/TuoiTuDong"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="Lịch tưới nước tự động"
+                android:text="Lịch tưới nước theo giờ"
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/green_text"
@@ -72,10 +73,10 @@
             <ToggleButton
                 android:layout_width="wrap_content"
                 android:layout_height="100px"
-               android:id="@+id/btn_TuoiTuDong"
+               android:id="@+id/btn_TuoiTheoGio"
                 android:textOff=" Tắt"
                 android:textOn=" Bật"
-                app:layout_constraintLeft_toRightOf="@+id/TuoiTuDong"
+
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="100px"
                 android:layout_marginRight="50px"
@@ -85,91 +86,135 @@
 
 
             <TextView
-                android:layout_width="300dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/DoAmTuoi"
+                android:id="@+id/tv_Tuoi"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TuoiTuDong"
-                android:text="Hệ thống tự động Tưới khi cường độ ánh sáng dưới ngưỡng: "
+                android:text="Hệ thống tự động Tưới : "
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/green_text"
+                android:textSize="20dp"></TextView>
+            <ImageView
+                android:id="@+id/clock_icon_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Tuoi"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/img_clock" />
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_TuoiGio"
+                app:layout_constraintLeft_toRightOf="@+id/clock_icon_1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Tuoi"
+                android:text="Vào lúc: "
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/green_text"
                 android:textSize="20dp"></TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_MucDoAm"
-                app:layout_constraintTop_toBottomOf="@+id/DoAmTuoi"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_goneMarginTop="20dp"
-                android:layout_marginRight="60dp"
-                android:text="1202%"
+                android:id="@+id/tv_Gio"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Tuoi"
+                app:layout_constraintLeft_toRightOf="@+id/tv_TuoiGio"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:text="21 giờ"
                 android:textColor="@color/green_text"
-                android:textSize="25dp"></TextView>
-            <TextView
-                android:layout_width="300dp"
+                android:textSize="22dp"></TextView>
+            <ImageView
+                android:id="@+id/clock_icon_2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/TuoiThuCong"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_MucDoAm"
-                android:text="Tưới nước thủ công"
+                app:layout_constraintTop_toBottomOf="@+id/clock_icon_1"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/img_clock" />
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_SoPhut"
+                app:layout_constraintLeft_toRightOf="@+id/clock_icon_2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_TuoiGio"
+                android:text="Trong vòng: "
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/green_text"
+                android:textSize="20dp"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_Phut"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Gio"
+                app:layout_constraintLeft_toRightOf="@+id/tv_SoPhut"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
+                android:text="10 phút"
                 android:textColor="@color/green_text"
-                android:textSize="25dp"></TextView>
-            <Button
-                android:id="@+id/btn_TuoiNuoc"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/green_btn"
-                android:text="Tưới nước"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="50dp"
-                app:layout_constraintTop_toBottomOf="@+id/TuoiThuCong"
-                app:layout_constraintLeft_toLeftOf="parent"
-                tools:ignore="HardcodedText" />
-            <Button
-                android:id="@+id/btn_TatNuoc"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/green_btn"
-                android:text="Ngưng tưới"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="50dp"
-                app:layout_constraintTop_toBottomOf="@+id/TuoiThuCong"
-                app:layout_constraintLeft_toRightOf="@+id/btn_TuoiNuoc"
-                tools:ignore="HardcodedText" />
+                android:textSize="22dp"></TextView>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="550dp"
                 android:id="@+id/view"
                 android:background="@drawable/green1_view"
-                app:layout_constraintTop_toBottomOf="@+id/btn_TuoiNuoc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Phut"
                 android:layout_marginTop="30dp"
                ></View>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/DeXuat"
-                android:text="Đề xuất lịch tưới nước"
-                android:textSize="20dp"
+                android:id="@+id/tv_ChangeMucDoAm"
+                android:text="Thay đổi thời gian tưới:"
+                android:textSize="21dp"
                 app:layout_constraintTop_toTopOf="@+id/view"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/green_text"
+                ></TextView>
+            <EditText
+                android:id="@+id/edit_MucDoAm"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="70dp"
+                app:layout_constraintLeft_toLeftOf="@+id/view"
+                android:textSize="18dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ChangeMucDoAm"
+                android:textColor="@color/green_text" />
+            <Button
+                android:id="@+id/btn_CapNhat"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/green_btn"
+                android:text="Cập nhật"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toRightOf="@+id/edit_MucDoAm"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ChangeMucDoAm"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/DeXuat"
+                android:text="Đề xuất lịch tưới nước"
+                android:textSize="21dp"
+                app:layout_constraintTop_toBottomOf="@+id/edit_MucDoAm"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/green_text"
                ></TextView>
-
-
-
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/DoAmCard"
@@ -224,26 +269,19 @@
                       android:layout_marginLeft="20dp"
                       android:textSize="18dp"
                       tools:ignore="HardcodedText" />
-
-
                   <Button
                       android:id="@+id/btn_DoAm50"
                       android:layout_width="0dp"
                       android:layout_height="45dp"
-
                       android:layout_marginBottom="16dp"
                       android:backgroundTint="@color/green_btn"
                       android:text="Chọn"
                       android:textColor="@color/white"
                       android:textSize="15dp"
                       android:layout_marginLeft="150dp"
-
                       app:layout_constraintLeft_toRightOf="@+id/img_DoAm1"
                       app:layout_constraintTop_toBottomOf="@+id/tv_PhuHop"
                       tools:ignore="HardcodedText" />
-
-
-
                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -258,13 +296,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/DoAmCard"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent">
-
                <androidx.constraintlayout.widget.ConstraintLayout
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
                    android:background="@drawable/white_view"
                    android:paddingBottom="10dp">
-
                   <ImageView
                       android:layout_width="70dp"
                       android:layout_height="70dp"
@@ -275,14 +311,12 @@
                       android:layout_marginLeft="20dp"
                       android:src="@drawable/img_green_water"
                       ></ImageView>
-
                   <TextView
                       android:id="@+id/tv_DoAm2"
                       android:layout_width="220dp"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="15dp"
                       android:text="Tự động tưới khi độ ẩm dưới 20%"
-
                       android:textColor="@color/green_text"
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toRightOf="@+id/img_DoAm2"
@@ -301,34 +335,21 @@
                       android:layout_marginLeft="20dp"
                       android:textSize="18dp"
                       tools:ignore="HardcodedText" />
-
-
                   <Button
                       android:id="@+id/btn_DoAm20"
                       android:layout_width="0dp"
                       android:layout_height="45dp"
-
                       android:layout_marginBottom="16dp"
                       android:backgroundTint="@color/green_btn"
                       android:text="Chọn"
                       android:textColor="@color/white"
                       android:textSize="15dp"
                       android:layout_marginLeft="150dp"
-
                       app:layout_constraintLeft_toRightOf="@+id/img_DoAm2"
                       app:layout_constraintTop_toBottomOf="@+id/tv_PhuHop2"
                       tools:ignore="HardcodedText" />
-
-
-
                </androidx.constraintlayout.widget.ConstraintLayout>
-
             </androidx.cardview.widget.CardView>
-
-
-
-
-
          </androidx.constraintlayout.widget.ConstraintLayout>
       </LinearLayout>
    </ScrollView>

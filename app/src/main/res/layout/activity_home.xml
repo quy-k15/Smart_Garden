@@ -22,11 +22,11 @@
        android:id="@+id/btn_info_user"
        android:layout_width="35dp"
        android:layout_height="35dp"
-       android:layout_marginTop="30dp"
+       android:layout_marginTop="20dp"
        android:background="@drawable/icon_user"
-       app:layout_constraintLeft_toRightOf="@+id/tv_home"
+       app:layout_constraintRight_toRightOf="parent"
        app:layout_constraintTop_toTopOf="parent"
-       android:layout_marginLeft="200dp" />
+       android:layout_marginRight="30dp" />
 
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/btn_garden"

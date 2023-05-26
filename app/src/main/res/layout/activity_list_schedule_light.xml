@@ -9,15 +9,14 @@
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:id="@+id/tv_MyGarden"
+       android:id="@+id/tv_WaterSchedule"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintLeft_toLeftOf="parent"
-       android:text="Vườn của tôi"
+       android:text="Lịch thắp đèn"
        android:layout_marginTop="20dp"
        android:layout_marginLeft="80dp"
        android:textColor="@color/green_text"
        android:textSize="30dp"></TextView>
-
 
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/btn_info_user"
@@ -28,6 +27,7 @@
        app:layout_constraintRight_toRightOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        android:layout_marginRight="30dp" />
+
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/btn_back"
        android:layout_width="35dp"
@@ -42,11 +42,11 @@
    <ScrollView
        android:layout_width="0dp"
        android:layout_height="0dp"
-       android:layout_marginTop="8dp"
+       android:layout_marginTop="20dp"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/tv_MyGarden">
+       app:layout_constraintTop_toBottomOf="@+id/tv_WaterSchedule">
 
       <LinearLayout
           android:layout_width="match_parent"
@@ -95,7 +95,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -109,53 +109,51 @@
                   <ImageView
                       android:layout_width="85dp"
                       android:layout_height="85dp"
-                      android:id="@+id/img_DoAm"
+                      android:id="@+id/img_TuoiTuDong"
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toLeftOf="parent"
                       android:layout_margin="20dp"
-                      android:src="@drawable/img_water_scarcity"
+                      android:src="@drawable/img_DenTuDong"
                       ></ImageView>
                   <TextView
-                      android:id="@+id/DoAm"
+                      android:id="@+id/tv_TuoiTuDong"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:layout_marginTop="25dp"
-                      android:text="Độ ẩm trong đất"
-
-                      android:textColor="@color/white"
+                      android:layout_marginTop="20dp"
+                      android:text="Lịch tưới tự động"
+                      android:textColor="@color/green_text"
                       app:layout_constraintTop_toTopOf="parent"
-                      app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
-                      android:layout_marginLeft="12dp"
-                      android:textSize="22dp"
+                      app:layout_constraintLeft_toRightOf="@+id/img_TuoiTuDong"
+                      android:layout_marginLeft="20dp"
+                      android:textSize="24dp"
                       tools:ignore="HardcodedText" />
-
                   <TextView
+                      android:id="@+id/tv_ApDungTuDong"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:id="@+id/tv_DoAm"
-                      app:layout_constraintTop_toBottomOf="@+id/DoAm"
-                      app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
-                      android:layout_marginTop="17dp"
-                      android:layout_marginLeft="12dp"
-                      android:textSize="22dp"
-
-
-                      ></TextView>
-
+                      android:text="Đang áp dụng"
+                      android:textColor="@color/green_text"
+                      app:layout_constraintTop_toBottomOf="@+id/tv_TuoiTuDong"
+                      app:layout_constraintLeft_toRightOf="@+id/img_TuoiTuDong"
+                      android:layout_marginLeft="20dp"
+                      android:textSize="18dp"
+                      tools:ignore="HardcodedText" />
                   <Button
-                      android:id="@+id/btn_XemThemDoAm"
-                      android:layout_width="0dp"
+                      android:id="@+id/btn_TuoiTuDong"
+                      android:layout_width="120dp"
                       android:layout_height="45dp"
                       android:layout_marginBottom="16dp"
                       android:backgroundTint="@color/green_btn"
-                      android:text="Xem thêm"
+                      android:text="Chi tiết"
                       android:textColor="@color/white"
-                      android:textSize="13dp"
+                      android:textSize="15dp"
                       android:layout_marginRight="20dp"
                       android:layout_marginTop="10dp"
                       app:layout_constraintRight_toRightOf="parent"
-                      app:layout_constraintTop_toBottomOf="@+id/DoAm"
+                      app:layout_constraintTop_toBottomOf="@+id/tv_ApDungTuDong"
                       tools:ignore="HardcodedText" />
+
+
                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -163,7 +161,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -178,62 +176,53 @@
                   <ImageView
                       android:layout_width="85dp"
                       android:layout_height="85dp"
-                      android:id="@+id/img_NhietDo"
+                      android:id="@+id/img_TuoiTheoGio"
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toLeftOf="parent"
                       android:layout_margin="20dp"
-                      android:src="@drawable/img_temperature_check"
+                      android:src="@drawable/img_DenClock"
                       ></ImageView>
 
                   <TextView
-                      android:id="@+id/NhietDo"
+                      android:id="@+id/TuoiTheoGio"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:layout_marginTop="25dp"
-                      android:text="Nhiệt độ hôm nay"
+                      android:layout_marginTop="20dp"
+                      android:text="Lịch tưới theo giờ"
 
-                      android:textColor="@color/white"
+                      android:textColor="@color/green_text"
                       app:layout_constraintTop_toTopOf="parent"
-                      app:layout_constraintLeft_toRightOf="@+id/img_NhietDo"
-                      android:layout_marginLeft="12dp"
-                      android:textSize="22dp"
+                      app:layout_constraintLeft_toRightOf="@+id/img_TuoiTheoGio"
+                      android:layout_marginLeft="20dp"
+                      android:textSize="24dp"
                       tools:ignore="HardcodedText" />
-<!--                  <ImageView-->
-<!--                      android:layout_width="40dp"-->
-<!--                      android:layout_height="40dp"-->
-<!--                      android:id="@+id/ic_NhietDo"-->
-<!--                      app:layout_constraintTop_toBottomOf="@+id/NhietDo"-->
-<!--                      app:layout_constraintLeft_toRightOf="@+id/img_NhietDo"-->
-<!--                      android:layout_marginLeft="20dp"-->
-<!--                      android:src="@drawable/ic_nhietdo"-->
-<!--                      android:layout_marginTop="15dp"-->
-<!--                      ></ImageView>-->
                   <TextView
+                      android:id="@+id/tv_ApDungGio"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:id="@+id/tv_NhietDo"
-                      app:layout_constraintTop_toBottomOf="@+id/NhietDo"
-                      app:layout_constraintLeft_toRightOf="@+id/img_NhietDo"
-                      android:layout_marginTop="17dp"
-                      android:layout_marginLeft="12dp"
-                      android:textSize="22dp"
-
-                      ></TextView>
+                      android:text="Không áp dụng"
+                      android:textColor="@color/green_text"
+                      app:layout_constraintTop_toBottomOf="@+id/TuoiTheoGio"
+                      app:layout_constraintLeft_toRightOf="@+id/img_TuoiTheoGio"
+                      android:layout_marginLeft="20dp"
+                      android:textSize="18dp"
+                      tools:ignore="HardcodedText" />
                   <Button
-                      android:id="@+id/btn_XemThemNhietDo"
-                      android:layout_width="0dp"
+                      android:id="@+id/btn_TuoiTheoGio"
+                      android:layout_width="120dp"
                       android:layout_height="45dp"
-
                       android:layout_marginBottom="16dp"
                       android:backgroundTint="@color/green_btn"
-                      android:text="Xem thêm"
+                      android:text="Chi tiết"
                       android:textColor="@color/white"
-                      android:textSize="13dp"
+                      android:textSize="15dp"
                       android:layout_marginRight="20dp"
-
+                      android:layout_marginTop="10dp"
                       app:layout_constraintRight_toRightOf="parent"
-                      app:layout_constraintTop_toBottomOf="@id/NhietDo"
+                      app:layout_constraintTop_toBottomOf="@+id/tv_ApDungGio"
                       tools:ignore="HardcodedText" />
+
+
                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -245,7 +234,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -260,62 +249,56 @@
                   <ImageView
                       android:layout_width="85dp"
                       android:layout_height="85dp"
-                      android:id="@+id/img_AnhSang"
+                      android:id="@+id/img_TuoiThuCong"
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toLeftOf="parent"
                       android:layout_margin="20dp"
-                      android:src="@drawable/img_sunny"
+                      android:src="@drawable/img_DenThuCong"
                       ></ImageView>
-
-
-
-
                   <TextView
-                      android:id="@+id/AnhSang"
+                      android:id="@+id/tv_TuoiThuCong"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:layout_marginTop="25dp"
-                      android:text="Cường độ ánh sáng"
-
-                      android:textColor="@color/white"
+                      android:layout_marginTop="20dp"
+                      android:text="Tưới thủ công"
+                      android:textColor="@color/green_text"
                       app:layout_constraintTop_toTopOf="parent"
-                      app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
-                      android:layout_marginLeft="12dp"
-                      android:textSize="22dp"
+                      app:layout_constraintLeft_toRightOf="@+id/img_TuoiThuCong"
+                      android:layout_marginLeft="20dp"
+                      android:textSize="24dp"
                       tools:ignore="HardcodedText" />
-
                   <TextView
+                      android:id="@+id/tv_ApDungThuCong"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:id="@+id/tv_AnhSang"
-                      app:layout_constraintTop_toBottomOf="@+id/AnhSang"
-                      app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
-                      android:layout_marginTop="17dp"
-                      android:layout_marginLeft="12dp"
-                      android:textSize="22dp"
-                      ></TextView>
+                      android:text="Không áp dụng"
+                      android:textColor="@color/green_text"
+                      app:layout_constraintTop_toBottomOf="@+id/tv_TuoiThuCong"
+                      app:layout_constraintLeft_toRightOf="@+id/img_TuoiThuCong"
+                      android:layout_marginLeft="20dp"
+                      android:textSize="18dp"
+                      tools:ignore="HardcodedText" />
                   <Button
-                      android:id="@+id/btn_XemThem"
-                      android:layout_width="0dp"
+                      android:id="@+id/btn_TuoiThuCong"
+                      android:layout_width="120dp"
                       android:layout_height="45dp"
                       android:layout_marginBottom="16dp"
                       android:backgroundTint="@color/green_btn"
-                      android:text="Xem thêm"
+                      android:text="Chi tiết"
                       android:textColor="@color/white"
-                      android:textSize="13dp"
+                      android:textSize="15dp"
                       android:layout_marginRight="20dp"
+                      android:layout_marginTop="10dp"
                       app:layout_constraintRight_toRightOf="parent"
-                      app:layout_constraintTop_toBottomOf="@id/AnhSang"
+                      app:layout_constraintTop_toBottomOf="@+id/tv_ApDungThuCong"
                       tools:ignore="HardcodedText" />
+
+
                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
          </androidx.constraintlayout.widget.ConstraintLayout>
       </LinearLayout>
    </ScrollView>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

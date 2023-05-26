@@ -21,13 +21,13 @@
 
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/btn_info_user"
-       android:layout_width="48dp"
-       android:layout_height="48dp"
-       android:layout_marginLeft="60dp"
-       android:layout_marginTop="30dp"
+       android:layout_width="35dp"
+       android:layout_height="35dp"
+       android:layout_marginTop="20dp"
        android:background="@drawable/icon_user"
-       app:layout_constraintLeft_toRightOf="@+id/tv_ScheduleWater"
-       app:layout_constraintTop_toTopOf="parent" />
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_marginRight="30dp" />
 
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/btn_back"

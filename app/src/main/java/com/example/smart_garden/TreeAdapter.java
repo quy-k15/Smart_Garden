@@ -42,14 +42,15 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.MyViewHolder>{
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         tree = mtree.get(position);
         dtb = FirebaseFirestore.getInstance();
-        id_tree=tree.getID_Tree();
+        id_tree=tree.getId_Tree();
         holder.name.setText(tree.getName());
         holder.tv_header.setText("Quản lý vườn:");
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.btn_Detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mcon, AboutTreeActivity.class);
-                intent.putExtra("TreeID", tree.getID_Tree());
+                intent.putExtra("TreeID", tree.getId_Tree());
+                intent.putExtra("Name", tree.getName());
                 mcon.startActivity(intent);
             }
         });
@@ -63,15 +64,13 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.MyViewHolder>{
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, tv_header;
-//        Button btn_Detail;
+        Button btn_Detail,btn_Update;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tv_Name);
             tv_header=itemView.findViewById(R.id.QuanLy);
-//            btn_Detail=itemView.findViewById(R.id.btn_Detail);
+            btn_Detail=itemView.findViewById(R.id.btn_Detail);
+            btn_Update=itemView.findViewById(R.id.btn_Update);
         }
     }
-
-
-
 }
