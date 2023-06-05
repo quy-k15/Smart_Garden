@@ -32,7 +32,7 @@ import java.util.Date;
 import java.util.List;
 
 public class MyGardenActivity extends AppCompatActivity {
-    private Button btn_back,btn_add;
+    private Button btn_add;
     private DatabaseReference mDatabase;
     private FirebaseDatabase mFirebaseInstance;
     private RecyclerView rcvtree;
@@ -54,13 +54,6 @@ public class MyGardenActivity extends AppCompatActivity {
         getListTreeData();// Lấy dữ liệu các loại cây từ firebase
 
         overridePendingTransition(R.anim.anim_in_right,R.anim.anim_out_left);
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it1 = new Intent(MyGardenActivity.this,MainActivity.class);
-                startActivity(it1);
-            }
-        });
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +65,7 @@ public class MyGardenActivity extends AppCompatActivity {
     }
     public void init()
     {
-        btn_back=findViewById(R.id.btn_back);
+
         btn_add=findViewById(R.id.btn_AddTree);
         day=findViewById(R.id.tv_day);
         month=findViewById(R.id.tv_month);

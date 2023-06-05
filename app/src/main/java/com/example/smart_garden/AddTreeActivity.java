@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smart_garden.Model.Tree;
+import com.example.smart_garden.Model.quan_ly;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -57,62 +58,7 @@ public class AddTreeActivity extends AppCompatActivity {
                 AddTree();
             }
         });
-
-
     }
-//    public void AddTree() {
-//        // Get a reference to the Firebase database
-//        DatabaseReference firebaseRef = FirebaseDatabase.getInstance().getReference();
-//
-//        // Get a reference to the "users" node in the database and create a new child node
-//        DatabaseReference usersRef = firebaseRef.child("Tree").push();
-//
-//        // Set the values of the new child node
-//        Map<String, Object> userData = new HashMap<>();
-////        userData.put("Name", edit_Name.getText());
-////        userData.put("Muc_DoAm", edit_DoAm.getText());
-////        userData.put("Muc_AS", edit_DoSang.getText());
-//        List<String> doAmList = new ArrayList<>();
-//        doAmList.add(edit_DoAm.getText().toString());
-//
-//        List<String> asList = new ArrayList<>();
-//        asList.add(edit_DoSang.getText().toString());
-//
-//        userData.put("Name", edit_Name.getText().toString());
-//        userData.put("Muc_DoAm", doAmList);
-//        userData.put("Muc_AS", asList);
-//        usersRef.setValue(userData);
-//
-//        // Alternatively, you can also use a ValueListener to set the values of the new child node:
-//
-//        usersRef.addValueEventListener(new ValueEventListener() {
-//        @Override
-//        public void onDataChange(DataSnapshot dataSnapshot) {
-//
-////            dataSnapshot.getRef().child("name").setValue(edit_Name.getText());
-////            dataSnapshot.getRef().child("Muc_DoAm").setValue(edit_DoAm.getText());
-////            dataSnapshot.getRef().child("Muc_AS").setValue(edit_DoSang.getText());
-//            List<String> nameList = new ArrayList<>();
-//            nameList.add(edit_Name.getText().toString());
-//
-//            List<String> doAmList = new ArrayList<>();
-//            doAmList.add(edit_DoAm.getText().toString());
-//
-//            List<String> asList = new ArrayList<>();
-//            asList.add(edit_DoSang.getText().toString());
-//
-//            dataSnapshot.getRef().child("Muc_DoAm").setValue(doAmList);
-//            dataSnapshot.getRef().child("Muc_AS").setValue(asList);
-//        }
-//
-//        @Override
-//        public void onCancelled(DatabaseError error) {
-//            // Failed to read value
-//            Log.w(TAG, "Failed to read value.", error.toException());
-//        }
-//    });
-//
-//    }
     public void AddTree()
     {
         String name;
@@ -122,8 +68,12 @@ public class AddTreeActivity extends AppCompatActivity {
         mucAS = Double.parseDouble(edit_DoSang.getText().toString());
         mDatabase = FirebaseDatabase.getInstance().getReference();
         String treeId = mDatabase.child("Tree").push().getKey();
-        Tree tree = new Tree(name, mucDoAm, mucAS);
+        String quanlyID = mDatabase.child("quan_ly").push().getKey();
+        Tree tree = new Tree(name,quanlyID);
+
+        quan_ly quanly = new quan_ly(mucDoAm, mucAS);
         tree.setId_Tree(treeId); // Thiết lập giá trị ID cho đối tượng Tree
+        quanly.setId_quanLy(quanlyID);
 
         FirebaseDatabase.getInstance().getReference("Tree").child(treeId)
             .setValue(tree).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -140,6 +90,20 @@ public class AddTreeActivity extends AppCompatActivity {
                     Toast.makeText(AddTreeActivity.this,e.getMessage().toString(),Toast.LENGTH_LONG).show();
                 }
             });
+        FirebaseDatabase.getInstance().getReference("quan_ly").child(quanlyID)
+                .setValue(quanly).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            finish();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(AddTreeActivity.this,e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                    }
+                });
 //        writeNewTree(name,mucDoAm,mucAS);
         edit_Name.setText("");
         edit_DoAm.setText("");

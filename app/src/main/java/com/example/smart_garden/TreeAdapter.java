@@ -48,9 +48,8 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.MyViewHolder>{
         holder.btn_Detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mcon, AboutTreeActivity.class);
+                Intent intent = new Intent(mcon, ParameterScheduleActivity.class);
                 intent.putExtra("TreeID", tree.getId_Tree());
-                intent.putExtra("Name", tree.getName());
                 mcon.startActivity(intent);
             }
         });

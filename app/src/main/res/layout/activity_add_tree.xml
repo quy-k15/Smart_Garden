@@ -15,8 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -51,8 +49,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
-
-
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -126,27 +122,26 @@
                         android:textColor="@color/green_text" />
 
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingTop="10dp">
+
                     <ImageView
+                        android:id="@+id/ic_DoAm"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:id="@+id/ic_DoAm"
-                        android:src="@drawable/ic_water"
-                        ></ImageView>
+                        android:src="@drawable/ic_water"></ImageView>
 
                     <TextView
                         android:id="@+id/DoAm"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/green_text"
-                        android:text="Mức độ ẩm (%):"
                         android:layout_marginLeft="5dp"
-                        android:textSize="18dp"/>
+                        android:text="Mức độ ẩm (%):"
+                        android:textColor="@color/green_text"
+                        android:textSize="18dp" />
 
                     <EditText
                         android:id="@+id/edit_DoAm"
@@ -154,9 +149,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:paddingLeft="15dp"
-                        android:textSize="18dp"
+                        android:textColor="@color/green_text"
 
-                        android:textColor="@color/green_text" />
+                        android:textSize="18dp" />
 
                 </LinearLayout>
 
@@ -165,22 +160,22 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingTop="10dp">
+
                     <ImageView
+                        android:id="@+id/ic_NhietDo"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:id="@+id/ic_NhietDo"
 
-                        android:src="@drawable/ic_anhsang"
-                        ></ImageView>
+                        android:src="@drawable/ic_anhsang"></ImageView>
 
                     <TextView
                         android:id="@+id/AnhSang"
                         android:layout_width="170dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/green_text"
-                        android:text="Mức độ Sáng(Lux):"
                         android:layout_marginLeft="5dp"
-                        android:textSize="18dp"/>
+                        android:text="Mức độ Sáng(Lux):"
+                        android:textColor="@color/green_text"
+                        android:textSize="18dp" />
 
                     <EditText
                         android:id="@+id/edit_DoSang"
@@ -188,10 +183,12 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:paddingLeft="15dp"
-                        android:textSize="18dp"
-                        android:textColor="@color/green_text" />
+                        android:textColor="@color/green_text"
+                        android:textSize="18dp" />
 
                 </LinearLayout>
+
+
 
             </LinearLayout>
 
@@ -199,6 +196,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+
     <ImageView
         android:id="@+id/img_Tree"
         android:layout_width="0dp"

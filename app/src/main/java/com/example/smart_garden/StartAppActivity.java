@@ -19,7 +19,7 @@ public class StartAppActivity extends AppCompatActivity {
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it2 = new Intent(StartAppActivity.this,MainActivity.class);
+                Intent it2 = new Intent(StartAppActivity.this,MyGardenActivity.class);
                 startActivity(it2);
             }
         });

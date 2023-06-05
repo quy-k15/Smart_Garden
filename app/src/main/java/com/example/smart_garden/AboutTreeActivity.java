@@ -43,7 +43,7 @@ public class AboutTreeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_tree);
         intent = getIntent();
         treeID = intent.getStringExtra("TreeID");
-        Name = intent.getStringExtra("Name");
+        Toast.makeText(AboutTreeActivity.this,"ID tree"+treeID,Toast.LENGTH_LONG).show();
 
         init();
 
@@ -63,7 +63,8 @@ public class AboutTreeActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it1 = new Intent(AboutTreeActivity.this, MainActivity.class);
+                Intent it1 = new Intent(AboutTreeActivity.this, ParameterScheduleActivity.class);
+                it1.putExtra("TreeID", treeID);
                 startActivity(it1);
             }
         });
@@ -103,7 +104,7 @@ public class AboutTreeActivity extends AppCompatActivity {
 
             }
         }
-
+ 
         @Override
         public void onCancelled(DatabaseError databaseError) {
             // Xử lý khi có lỗi xảy ra

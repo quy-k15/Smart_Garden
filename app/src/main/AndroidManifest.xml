@@ -58,6 +58,38 @@
         <activity
             android:name=".ScheduleLightActivity"
             android:exported="false" />
+        <activity
+            android:name=".Light.LightAutomaticActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Light.LightClockActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Light.LightManuallyActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Light.LightScheduleActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Warter.WaterAutomaticActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Warter.WaterClockActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Warter.WaterManuallyActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Warter.WaterScheduleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ParameterScheduleActivity"
+            android:exported="false" />
 
     </application>
 
