@@ -35,35 +35,18 @@
             android:textSize="23sp"
             android:textColor="@color/green_text"
             tools:text="Hoa hướng dương" />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:id="@+id/btn_Detail"
-                android:text="Xem Thêm"
-                android:textSize="16dp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_Detail"
+            android:text="Xem Thêm"
+            android:textSize="16dp"
 
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/green_btn"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/white" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:id="@+id/btn_Update"
-                android:text="chỉnh sửa"
-                android:textSize="16dp"
-                android:layout_marginLeft="30px"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/sunset"
-
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/green_btn"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

@@ -43,7 +43,7 @@ public class AboutTreeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_tree);
         intent = getIntent();
         treeID = intent.getStringExtra("TreeID");
-        Toast.makeText(AboutTreeActivity.this,"ID tree"+treeID,Toast.LENGTH_LONG).show();
+//        Toast.makeText(AboutTreeActivity.this,"ID tree"+treeID,Toast.LENGTH_LONG).show();
 
         init();
 

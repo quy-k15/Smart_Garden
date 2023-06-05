@@ -20,12 +20,11 @@ import java.util.List;
 
 public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.MyViewHolder>{
 
-    MyGardenActivity myGarden;
     Tree tree;
     private Context mcon;
     private List<Tree> mtree;
     FirebaseFirestore dtb;
-    String Name, id_tree;
+    String  id_tree;
     MyGardenActivity myGardenActivity;
     public TreeAdapter(Context con,List<Tree> mtree){
 //        this.myGarden=mContext;
@@ -40,19 +39,26 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.MyViewHolder>{
     }
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
         tree = mtree.get(position);
         dtb = FirebaseFirestore.getInstance();
         id_tree=tree.getId_Tree();
         holder.name.setText(tree.getName());
         holder.tv_header.setText("Quản lý vườn:");
+
         holder.btn_Detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mcon, ParameterScheduleActivity.class);
-                intent.putExtra("TreeID", tree.getId_Tree());
-                mcon.startActivity(intent);
+                int adapterPosition = holder.getAdapterPosition();
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    Tree clickedTree = mtree.get(adapterPosition);
+                    Intent intent = new Intent(mcon, ParameterScheduleActivity.class);
+                    intent.putExtra("TreeID", clickedTree.getId_Tree());
+                    mcon.startActivity(intent);
+                }
             }
         });
+
     }
 
     @Override
@@ -63,13 +69,12 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.MyViewHolder>{
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, tv_header;
-        Button btn_Detail,btn_Update;
+        Button btn_Detail;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tv_Name);
             tv_header=itemView.findViewById(R.id.QuanLy);
             btn_Detail=itemView.findViewById(R.id.btn_Detail);
-            btn_Update=itemView.findViewById(R.id.btn_Update);
         }
     }
 }

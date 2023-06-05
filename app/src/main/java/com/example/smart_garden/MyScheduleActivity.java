@@ -16,13 +16,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class MyScheduleActivity extends AppCompatActivity {
     private Button btn_back,btn_LichTuoiNuoc,btn_LichThapDen;
-    private TextView tv_MucDoAm,tv_MucAs;
+    private TextView LichThapDen,LichTuoiNuoc;
     private Intent intent;
-    private String treeID;
+    private String treeID,id_quan_ly;
+    private Boolean AS_TuDong,AS_Gio,AS_ThuCong,DoAm_TuDong,DoAM_Gio,DoAm_ThuCong;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +34,9 @@ public class MyScheduleActivity extends AppCompatActivity {
         init();
         intent = getIntent();
         treeID = intent.getStringExtra("TreeID");
-        Toast.makeText(MyScheduleActivity.this,"ID tree"+treeID,Toast.LENGTH_LONG).show();
-        getThong_So();
+        getTree();
+//        Toast.makeText(MyScheduleActivity.this,"ID tree"+treeID,Toast.LENGTH_LONG).show();
+
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,30 +69,103 @@ public class MyScheduleActivity extends AppCompatActivity {
         btn_back=findViewById(R.id.btn_back);
         btn_LichTuoiNuoc=findViewById(R.id.btn_LichTuoiNuoc);
         btn_LichThapDen=findViewById(R.id.btn_LichThapDen);
-        tv_MucDoAm=findViewById(R.id.tv_MucDoAm);
-        tv_MucAs=findViewById(R.id.tv_MucAs);
+        LichTuoiNuoc=findViewById(R.id.LichTuoiNuoc);
+        LichThapDen=findViewById(R.id.LichThapDen);
+
     }
-    public void getThong_So() {
-        // Lấy đường dẫn đến bảng ThongSo
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("thong_so");
+    public void getTree() {
+        // Lấy đường dẫn đến bảng Tree và tìm các node có "id_Tree" bằng treeID
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("Tree");
+        Query treeData = databaseRef.orderByChild("id_Tree").equalTo(treeID);
+
         // Đăng ký một listener để theo dõi thay đổi giá trị trên database
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // Lấy giá trị mới từ database và cập nhật vào UI
-                Double Muc_DoAm = dataSnapshot.child("Muc_DoAm").getValue(Double.class);
-                Double Muc_AS = dataSnapshot.child("Muc_AS").getValue(Double.class);
-                // Cập nhật các thuộc tính trong giao diện người dùng
-                tv_MucDoAm.setText(String.valueOf(Muc_DoAm) +" %");
-                tv_MucAs.setText(String.valueOf(Muc_AS) + "Lux");
+                // Lặp qua từng node trả về và lấy dữ liệu tương ứng
+                for (DataSnapshot treeSnapshot : dataSnapshot.getChildren()) {
+                    id_quan_ly = treeSnapshot.child("id_quanLy").getValue(String.class);
+//                    Toast.makeText(WaterAutomaticActivity.this,"ID quan ly"+id_quan_ly,Toast.LENGTH_LONG).show();
+                }
+                getQuanLy();
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Xử lý khi có lỗi xảy ra
             }
         };
-        // Đăng ký listener với đường dẫn của bảng ThongSo trong Firebase Realtime Database
-        databaseRef.addValueEventListener(valueEventListener);
+        treeData.addValueEventListener(valueEventListener);
     }
+    public void getQuanLy() {
+        // Lấy đường dẫn đến bảng Tree và tìm các node có "id_Tree" bằng treeID
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("quan_ly");
+        Query quanlyData = databaseRef.orderByChild("id_quanLy").equalTo(id_quan_ly);
+        // Đăng ký một listener để theo dõi thay đổi giá trị trên database
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Lặp qua từng node trả về và lấy dữ liệu tương ứng
+                for (DataSnapshot treeSnapshot : dataSnapshot.getChildren()) {
+                    String id = treeSnapshot.child("id_quanLy").getValue(String.class);
+                    AS_TuDong = treeSnapshot.child("batDen_TuDong").getValue(Boolean.class);
+                    AS_Gio= treeSnapshot.child("batDen_Gio").getValue(Boolean.class);
+                    AS_ThuCong= treeSnapshot.child("batDen_ThuCong").getValue(Boolean.class);
+
+                    DoAm_TuDong = treeSnapshot.child("tuoiNuoc_TuDong").getValue(Boolean.class);
+                    DoAM_Gio= treeSnapshot.child("tuoiNuoc_Gio").getValue(Boolean.class);
+                    DoAm_ThuCong= treeSnapshot.child("tuoiNuoc_ThuCong").getValue(Boolean.class);
+
+
+
+                    if(AS_TuDong==true)
+                    {
+                        LichThapDen.setText("Tự động thắp đèn theo chế độ dựa trên thông số");
+                    }
+                    else if(AS_Gio==true)
+                    {
+                        LichThapDen.setText("Tự động thắp đèn theo chế độ hẹn giờ");
+                    }
+                    else if(AS_ThuCong==true)
+                    {
+                        LichThapDen.setText("Thắp đèn theo chế độ thủ công ");
+                    }
+                    else{
+                        LichThapDen.setText("Chưa chọn chế độ");
+                    }
+
+                    if(DoAm_TuDong==true)
+                    {
+                        LichTuoiNuoc.setText("Tự động thắp đèn theo chế độ dựa trên thông số");
+                    }
+                    else if(DoAM_Gio==true)
+                    {
+                        LichTuoiNuoc.setText("Tự động thắp đèn theo chế độ hẹn giờ");
+                    }
+                    else if(DoAm_ThuCong==true)
+                    {
+                        LichTuoiNuoc.setText("Thắp đèn theo chế độ thủ công ");
+                    }
+                    else{
+                        LichTuoiNuoc.setText("Chưa chọn chế độ");
+                    }
+
+
+                }
+
+
+
+
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý khi có lỗi xảy ra
+            }
+        };
+        quanlyData.addValueEventListener(valueEventListener);
+    }
+
+
 
 }

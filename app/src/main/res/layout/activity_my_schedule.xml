@@ -134,7 +134,7 @@
                   <TextView
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:id="@+id/LichTuoiNuoc"
+                      android:id="@+id/LichTuoi"
                       app:layout_constraintTop_toTopOf="parent"
                       app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
                       android:text="Lịch tưới nước"
@@ -144,28 +144,19 @@
                       android:textSize="24dp"></TextView>
 
                   <TextView
-                      android:id="@+id/LichDoAm"
+                      android:id="@+id/LichTuoiNuoc"
                       android:layout_width="200dp"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="10dp"
                       android:text="Tự động tưới khi độ ẩm dưới ngưỡng: "
                       android:textColor="@color/green_text"
-                      app:layout_constraintTop_toBottomOf="@+id/LichTuoiNuoc"
+                      app:layout_constraintTop_toBottomOf="@+id/LichTuoi"
                       app:layout_constraintLeft_toRightOf="@+id/img_DoAm"
                       android:layout_marginLeft="20dp"
 
                       android:textSize="19dp"
                       tools:ignore="HardcodedText" />
-                  <TextView
-                      android:id="@+id/tv_MucDoAm"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:textColor="@color/green_text"
-                      app:layout_constraintRight_toRightOf="parent"
-                      app:layout_constraintTop_toBottomOf="@+id/LichDoAm"
-                      android:layout_marginRight="50dp"
-                      android:textSize="25dp"
-                      tools:ignore="HardcodedText" />
+
 
 
                </androidx.constraintlayout.widget.ConstraintLayout>
@@ -222,18 +213,11 @@
                       app:layout_constraintLeft_toRightOf="@+id/img_AnhSang"
                       android:layout_marginLeft="20dp"
                       android:textSize="19dp"
+                      app:layout_constraintBottom_toBottomOf="parent"
+                      android:layout_marginBottom="20dp"
                       tools:ignore="HardcodedText" />
 
-                  <TextView
-                      android:id="@+id/tv_MucAs"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:textColor="@color/green_text"
-                      app:layout_constraintRight_toRightOf="parent"
-                      app:layout_constraintTop_toBottomOf="@+id/LichThapDen"
-                      android:layout_marginRight="50dp"
-                      android:textSize="25dp"
-                      tools:ignore="HardcodedText" />
+
 
                </androidx.constraintlayout.widget.ConstraintLayout>
 

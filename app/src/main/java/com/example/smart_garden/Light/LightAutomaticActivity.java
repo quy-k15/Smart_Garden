@@ -208,9 +208,6 @@ public class LightAutomaticActivity extends AppCompatActivity {
                 Toast.makeText(LightAutomaticActivity.this, "Không thể đọc dữ liệu từ Firebase. Vui lòng thử lại sau.", Toast.LENGTH_LONG).show();
             }
         });
-        // Đăng ký listener và query vào DatabaseReference để thực hiện thao tác cập nhật dữ liệu
-//        treeData.removeEventListener(valueEventListener);
-//        treeData.addValueEventListener(valueEventListener);
     }
     public void UpdateCheDo() {
 
