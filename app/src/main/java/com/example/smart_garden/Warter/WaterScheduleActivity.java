@@ -32,7 +32,7 @@ public class WaterScheduleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_schedule_water);
         overridePendingTransition(R.anim.anim_in_right,R.anim.anim_out_left);
         init();
-        getThong_So();
+//        getThong_So();
         intent = getIntent();
         treeID = intent.getStringExtra("TreeID");
         Toast.makeText(WaterScheduleActivity.this,"ID tree"+treeID,Toast.LENGTH_LONG).show();
@@ -86,25 +86,25 @@ public class WaterScheduleActivity extends AppCompatActivity {
         tv_ApDungThuCong=findViewById(R.id.tv_ApDungThuCong);
 
     }
-    public void getThong_So() {
-        // Lấy đường dẫn đến bảng ThongSo
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("thong_so");
-        // Đăng ký một listener để theo dõi thay đổi giá trị trên database
-        ValueEventListener valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Lấy giá trị mới từ database và cập nhật vào UI
-                Double MucAnhSangValue = dataSnapshot.child("Muc_AS").getValue(Double.class);
-                // Cập nhật các thuộc tính trong giao diện người dùng
-
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Xử lý khi có lỗi xảy ra
-            }
-        };
-        // Đăng ký listener với đường dẫn của bảng ThongSo trong Firebase Realtime Database
-        databaseRef.addValueEventListener(valueEventListener);
-    }
+//    public void getThong_So() {
+//        // Lấy đường dẫn đến bảng ThongSo
+//        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("thong_so");
+//        // Đăng ký một listener để theo dõi thay đổi giá trị trên database
+//        ValueEventListener valueEventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // Lấy giá trị mới từ database và cập nhật vào UI
+//                Double MucAnhSangValue = dataSnapshot.child("Muc_AS").getValue(Double.class);
+//                // Cập nhật các thuộc tính trong giao diện người dùng
+//
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                // Xử lý khi có lỗi xảy ra
+//            }
+//        };
+//        // Đăng ký listener với đường dẫn của bảng ThongSo trong Firebase Realtime Database
+//        databaseRef.addValueEventListener(valueEventListener);
+//    }
 
 }

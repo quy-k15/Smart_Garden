@@ -87,8 +87,8 @@ public class ScheduleLightActivity extends AppCompatActivity {
         btn_back=findViewById(R.id.btn_back);
         btn_BatDen=findViewById(R.id.btn_BatDen);
         btn_TatDen=findViewById(R.id.btn_TatDen);
-        btn_MucAS_2200=findViewById(R.id.btn_MucAS_2200);
-        btn_MucAS_1225=findViewById(R.id.btn_MucAS_1225);
+//        btn_MucAS_2200=findViewById(R.id.btn_MucAS_2200);
+//        btn_MucAS_1225=findViewById(R.id.btn_MucAS_1225);
         tv_MucAS=findViewById(R.id.tv_MucAS);
         btn_DenTuDong=findViewById(R.id.btn_DenTuDong);
     }

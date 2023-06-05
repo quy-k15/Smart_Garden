@@ -253,7 +253,7 @@ public class WaterClockActivity extends AppCompatActivity {
                         if (btn_TuoiTheoGio.isChecked()) {
                             treeSnapshot.getRef().child("tuoiNuoc_TuDong").setValue(false);
                             treeSnapshot.getRef().child("tuoiNuoc_Gio").setValue(true);
-                            treeSnapshot.getRef().child("tuoiNuoc").setValue(false);
+                            treeSnapshot.getRef().child("tuoiNuoc_ThuCong").setValue(false);
                             Toast.makeText(WaterClockActivity.this, "Đã bật chế độ tưới theo giờ!", Toast.LENGTH_LONG).show();
 
                         } else {
